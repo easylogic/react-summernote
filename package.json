@@ -1,0 +1,56 @@
+{
+  "name": "@easylogic/react-summernote",
+  "version": "0.0.1",
+  "description": "React extension for summernote",
+  "main": "dist/index.js",
+  "module": "dist/",
+  "scripts": {
+    "dev:lite": "webpack-dev-server --config ./config/lite/webpack.dev.config.js --progress",
+    "dev:bs4": "webpack-dev-server --config ./config/bs4/webpack.dev.config.js --progress",
+    "dev": "npm run dev:bs4",
+    "build:lite": "webpack --config ./config/lite/webpack.prod.config.js --progress",
+    "build:bs4": "webpack --config ./config/bs4/webpack.prod.config.js --progress",
+    "build:bs3": "webpack --config ./config/bs3/webpack.prod.config.js --progress",
+    "build": "npm run build:lite && npm run build:bs4",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easylogic/react-summernote.git"
+  },
+  "keywords": [],
+  "author": "easylogic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easylogic/react-summernote/issues"
+  },
+  "homepage": "https://github.com/easylogic/react-summernote#readme",
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@types/jquery": "^3.3.33",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "bootstrap": "^4.4.1",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "file-loader": "^5.1.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "popper.js": "^1.16.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "url-loader": "^3.0.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "summernote": "^0.8.16"
+  }
+}
