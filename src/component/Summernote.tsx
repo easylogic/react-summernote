@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import $ from 'jquery';
-import { SummernoteProps } from 'index';
+import { SummernoteProps } from 'src/index';
 
 function getContainerId (id: string) {
     return `${id}-container`
@@ -11,16 +11,16 @@ function getElement(id: string) {
 }
 
 function Summernote(props: SummernoteProps) {
-    const [opt] = useState({...props.opt})
-
     useEffect(() => {
- 
-        ($(getElement(props.id)) as any).summernote(opt);
+
+        const dialogsInBody = typeof props.opt?.dialogsInBody === 'undefined' ? true : props.opt.dialogsInBody;
+
+        ($(getElement(props.id)) as any).summernote({ ...props.opt, dialogsInBody });
 
         return () => {
             ($(getElement(props.id)) as any).summernote('destroy');
         } 
-    })
+    }, [props.opt])
 
     return (
         <div className="react-summernote">

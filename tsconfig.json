@@ -19,8 +19,11 @@
       "esModuleInterop": true,
       "resolveJsonModule": true,
       "baseUrl": ".",
-      "paths": {}
+      "rootDirs": ["src", "src/stories"],
+      "paths": {
+          "src": ["./src"]
+      }
     },
-    "exclude": ["node_modules", "config/"],
-    "include": ["index.d.ts", "src/**/*.ts", "src/**/*.tsx"]
+    "exclude": ["node_modules", "config/", "dist/"],
+    "include": ["src/**/*", "src/stories/**/*"],
   }

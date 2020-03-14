@@ -1,3 +1,4 @@
+declare module '*.mdx';
 import { ReactNode } from "react";
 
 interface SummernoteProps {
@@ -20,4 +21,11 @@ interface SummernoteButtonProps {
 
 interface SummernoteButtonGroup {
     [index: number]: HTMLElement;
+}
+
+declare global {
+    interface Window {
+        jQuery:any;
+        $:any;
+    }
 }

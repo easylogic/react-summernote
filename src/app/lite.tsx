@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react';
 import * as ReactDOM from 'react-dom';
 import ReactSummernoteLite from '../summernote/ReactSummernoteLite';
-import { SummernoteContext, SummernoteButtonProps } from 'index';
+import { SummernoteContext, SummernoteButtonProps } from 'src/index';
 
 import 'jquery';
-import 'summernote/dist/lang/summernote-ko-KR';
+import 'summernote/lang/summernote-ko-KR';
 
 function createButton (button: ReactElement): any {
     const span = document.createElement('span');

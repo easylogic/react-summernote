@@ -1,6 +1,8 @@
 const merge = require('webpack-merge');
 const common = require('../common.config');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = merge(common, {
@@ -33,6 +35,9 @@ module.exports = merge(common, {
     }),
     new MiniCssExtractPlugin({
         filename: '[name].css'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'node_modules/summernote/lang', to: 'lang' },
+    ])
   ]
 });

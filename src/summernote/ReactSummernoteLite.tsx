@@ -2,7 +2,7 @@ import React from 'react';
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
 import Summernote from 'src/component/Summernote';
-import { SummernoteProps } from 'index';
+import { SummernoteProps } from 'src/index';
 
 
 function ReactSummernoteLite(props: SummernoteProps) {
