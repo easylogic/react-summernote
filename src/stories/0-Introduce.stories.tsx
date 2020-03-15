@@ -62,10 +62,10 @@ import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite'
 import '@easylogic/react-summernote/summernote-lite.css'
 
 const EditorComponent = () => {
-  return <ReactSummernoteBS4 id="sample" opt={{ 
+  return <ReactSummernoteLite id="sample" opt={{ 
     callbacks: { 
       onInit: ({ note }: any ) => {
-        $note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+        note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
       }
     }
   }} />
