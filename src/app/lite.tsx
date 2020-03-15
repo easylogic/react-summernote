@@ -6,7 +6,7 @@ import { SummernoteContext, SummernoteButtonProps } from 'src/index';
 import 'jquery';
 import 'summernote/lang/summernote-ko-KR';
 
-function createButton (button: ReactElement): any {
+function createSummernoteButton (button: ReactElement): any {
     const span = document.createElement('span');
     ReactDOM.render(button, span)
     return span;
@@ -24,7 +24,7 @@ function App() {
             lang: 'ko-KR',
             buttons: {
                 hello: function (context: SummernoteContext) {
-                    return createButton (<MyButton context={context}></MyButton>)
+                    return createSummernoteButton (<MyButton context={context}></MyButton>)
                 }
             },
         }}>
