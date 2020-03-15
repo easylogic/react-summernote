@@ -19,6 +19,60 @@ export const IntroduceReactSummernote = () => {
           <dt>Support :</dt><dd>Bs4, Lite</dd> 
           <dt>feature :</dt><dd>all features of summernote</dd> 
         </dl>
+
+        <h1>Webpack Config</h1>
+        <pre>{`
+
+  plugins: [
+    ....,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+  ]
+        `}
+        </pre>
+
+        <h1>ReactSummernoteBS4</h1>
+        <pre>{`
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+import 'bootstrap/dist/bootstrap.css'
+import ReactSummernoteBS4 from '@easylogic/react-summernote/summernote-bs4'
+import '@easylogic/react-summernote/summernote-bs4.css'
+
+const EditorComponent = () => {
+  return <ReactSummernoteBS4 id="sample" opt={{ 
+    callbacks: { 
+      onInit: ({ note }: any ) => {
+        $note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+      }
+    }
+  }} />
+}
+
+export default EditorComponent
+      `}</pre>        
+
+<h1>ReactSummernoteLite</h1>
+        <pre>{`
+import 'jquery'
+import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite'
+import '@easylogic/react-summernote/summernote-lite.css'
+
+const EditorComponent = () => {
+  return <ReactSummernoteBS4 id="sample" opt={{ 
+    callbacks: { 
+      onInit: ({ note }: any ) => {
+        $note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+      }
+    }
+  }} />
+}
+
+export default EditorComponent
+      `}</pre>        
       </div>
     </div>
   )
