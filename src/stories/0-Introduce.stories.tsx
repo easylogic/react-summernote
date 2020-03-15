@@ -79,7 +79,7 @@ export default EditorComponent
 }
 
 IntroduceReactSummernote.story = {
-  name: '소개',
+  name: 'Getting Started',
 };
 
 export const IntroduceReactSummernoteBS4  = () => {
@@ -105,9 +105,6 @@ import '@easylogic/react-summernote/summernote-bs4.css';
 
 IntroduceReactSummernoteBS4.story = {
   name: 'bootstrap4',
-  parameters: {
-    info: { inline: true }
-  }
 };
 
 
@@ -134,7 +131,4 @@ import '@easylogic/react-summernote/summernote-lite.css';
 
 IntroduceReactSummernoteLite.story = {
   name: 'lite',
-  parameters: {
-    info: { inline: true }
-  }
 };
