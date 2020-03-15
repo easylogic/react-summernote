@@ -18,7 +18,7 @@ export const SummernoteHeightOption = () => {
   }
   
   SummernoteHeightOption.story = {
-    name: 'Height',
+    name: 'height',
     decorators: [withKnobs],
     parameters: {
       info: { inline: true},

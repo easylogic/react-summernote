@@ -18,7 +18,7 @@ export const SummernoteFocusOption = () => {
   }
   
   SummernoteFocusOption.story = {
-    name: 'Focus',
+    name: 'focus',
     decorators: [withKnobs],
     parameters: {
       info: { inline: true},
