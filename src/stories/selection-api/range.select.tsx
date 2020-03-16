@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 
 export const RangeSelectCommand = () => {
     let $note: any = null 
@@ -14,16 +15,15 @@ export const RangeSelectCommand = () => {
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
+        <ReactSummernoteLite id="sample" 
+            onInit={({ note }: SummernoteCallbackInitProps ) => {
               $note = note; 
-            },
-            onChange: () => {
+            }}
+
+            onChange={() => {
               $note.summernote('getLastRange').select()
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

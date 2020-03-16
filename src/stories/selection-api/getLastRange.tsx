@@ -9,20 +9,20 @@ export const GetLastRangeCommand = () => {
         <p>summernote is saving a range object(WrappedRange) on current cursor.</p>
         <pre>{`
         const $note: any = null;
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({note}: any)  => {
-              console.log(note.summernote('getLastRange'))
-              $note = note;               
-            },
-            onChange: (value: string ) => {
-              console.log(value, note.summernote('getLastRange'))
-            },
-            onMouseup: () => {
-              console.log(note.summernote('getLastRange'))
-            }            
-          }
-        }} />
+        <ReactSummernoteLite id="sample" 
+          onInit={({ note }: any ) => {
+            console.log(note.summernote('getLastRange'))
+            $note = note; 
+          }}
+
+          onChange={(value: string) => {
+            console.log(value, $note.summernote('getLastRange'))
+          }}
+
+          onMouseup={() => {
+            console.log($note.summernote('getLastRange'))
+          }}
+        />
       `}</pre>
         <blockquote>
           <h4 id="when-summernote-save-a-range-with-dom-event">when summernote save a range with dom event</h4>
@@ -45,20 +45,20 @@ export const GetLastRangeCommand = () => {
             <li><code >editor.createLink</code> -&gt; link node</li>
           </ul>
         </blockquote>      
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
+        <ReactSummernoteLite id="sample" 
+            onInit={({ note }: any ) => {
               console.log(note.summernote('getLastRange'))
               $note = note; 
-            },
-            onChange: (value: string) => {
+            }}
+
+            onChange={(value: string) => {
               console.log(value, $note.summernote('getLastRange'))
-            },
-            onMouseup: () => {
+            }}
+
+            onMouseup={() => {
               console.log($note.summernote('getLastRange'))
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

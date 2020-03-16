@@ -18,13 +18,11 @@ export const OnKeydownCallback = () => {
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onKeydown: function(e: any) {
+        <ReactSummernoteLite id="sample"
+            onKeydown={(e: any) => {
               console.log('Key is downed:', e.keyCode);
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

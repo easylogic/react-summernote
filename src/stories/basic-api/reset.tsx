@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const ResetCommand = () => {
     let $note: any = null; 
     function doReset () {
@@ -17,18 +18,14 @@ export const ResetCommand = () => {
         <h1>reset</h1>
         <p>Clear the editor content and remove all stored history.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                note.summernote('reset')
-            }
-          }
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('reset')
         }} />
       `}</pre>
         <button onClick={doReset}>reset </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note; 
+        }} />
       </div>
     )
   }

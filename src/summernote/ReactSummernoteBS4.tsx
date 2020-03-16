@@ -11,9 +11,9 @@ import Summernote from 'src/component/Summernote';
 import { SummernoteProps } from 'src/index';
 
 
-function ReactSummernoteBS4(props: SummernoteProps) {
+function ReactSummernoteBS4({children, ...props}: SummernoteProps) {
     return (
-        <Summernote id={props.id} opt={props.opt}>{props.children}</Summernote>
+        <Summernote {...props}>{children}</Summernote>
     )
 }
 

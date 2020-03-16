@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const CreateRangeCommand = () => {
     let $note: any = null; 
     function doCreateRange () {
@@ -18,18 +19,14 @@ export const CreateRangeCommand = () => {
         <h1>codeview.toggle</h1>
         <p>You can toggle editable/codable view by API.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                const range = note.summernote('createRange');
-            }
-          }
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note
         }} />
       `}</pre>
         <button onClick={doCreateRange}>create range</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
           $note = note
-        }}}} />
+        }} />
       </div>
     )
   }

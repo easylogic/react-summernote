@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const FormatHeaderCommand = () => {
     let $note: any = null; 
     function doFormatHeader (header: string) {
@@ -19,18 +20,14 @@ export const FormatHeaderCommand = () => {
         <h1>formatH1-H6</h1>
         <p>Change current paragraph as a {`<h1> ~ <h6>`}.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              note.summernote('formatH1');
-              note.summernote('formatH2');
-              note.summernote('formatH3');
-              note.summernote('formatH4');
-              note.summernote('formatH5');
-              note.summernote('formatH6');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('formatH1');
+          note.summernote('formatH2');
+          note.summernote('formatH3');
+          note.summernote('formatH4');
+          note.summernote('formatH5');
+          note.summernote('formatH6');
+        }} />                
       `}</pre>
         <button onClick={doFormatHeader('H1')}>formatH1</button>
         <button onClick={doFormatHeader('H2')}>formatH2</button>
@@ -38,9 +35,9 @@ export const FormatHeaderCommand = () => {
         <button onClick={doFormatHeader('H4')}>formatH4</button>
         <button onClick={doFormatHeader('H5')}>formatH5</button>
         <button onClick={doFormatHeader('H6')}>formatH6</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

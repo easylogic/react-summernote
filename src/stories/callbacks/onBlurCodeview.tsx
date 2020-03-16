@@ -8,23 +8,19 @@ export const OnBlurCodeviewCallback = () => {
       <div style={defaultStyle}>
         <h1 >onBlurCodeview</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onBlurCodeview: () => {
-              console.log('Codeview area loses focus');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" 
+          onBlurCodeview={() => {
+            console.log('Codeview area loses focus');
+          }}
+        />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onBlurCodeview: () => {
+        <ReactSummernoteLite id="sample" 
+            onBlurCodeview={() => {
               console.log('Codeview area loses focus');
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

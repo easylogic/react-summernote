@@ -52,27 +52,11 @@ export const ButtonExtension = () => {
           return <span onClick={() => alert('aa')}>{value} - {props.title}</span>
         }
 
-        <ReactSummernoteLite id="sample" opt={{ 
-          toolbar: [
-            ['group', ['hello']]
-          ],
-          buttons: {
-            hello: createSummernoteButton({
-              element: MyButton,
-              props: {
-                title: 'sample'
-              },
-              container: 'body',
-              tooltip: 'yellow'
-            })
-          },          
-       }} />
-      `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-            toolbar: [
+        <ReactSummernoteLite id="sample" 
+            toolbar={[
               ['group', ['hello']]
-            ],
-            buttons: {
+            ]}
+            buttons={{
               hello: createSummernoteButton({
                 element: MyButton,
                 props: {
@@ -81,8 +65,24 @@ export const ButtonExtension = () => {
                 container: 'body',
                 tooltip: 'yellow'
               })
-            },          
-         }} />
+            }}  
+          />
+      `}</pre>
+          <ReactSummernoteLite id="sample" 
+            toolbar={[
+              ['group', ['hello']]
+            ]}
+            buttons={{
+              hello: createSummernoteButton({
+                element: MyButton,
+                props: {
+                  title: 'sample'
+                },
+                container: 'body',
+                tooltip: 'yellow'
+              })
+            }}  
+          />
       </div>
     )
   }

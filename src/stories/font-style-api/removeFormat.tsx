@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const RemoveFormatCommand = () => {
     let $note: any = null; 
     function doRemoveFormat () {
@@ -15,18 +16,14 @@ export const RemoveFormatCommand = () => {
         <h1>removeFormat</h1>
         <p>Clean a style.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              note.summernote('removeFormat');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('removeFormat');
+        }} />                
       `}</pre>
         <button onClick={doRemoveFormat}>removeFormat</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

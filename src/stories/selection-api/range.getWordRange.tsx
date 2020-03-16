@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 
 export const RangeGetWordRangeCommand = () => {
     let $note: any = null 
@@ -24,13 +25,9 @@ export const RangeGetWordRangeCommand = () => {
         </pre>        
   
         <button onClick={doGetWordRange}>getWordRange</button>
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              $note = note; 
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />   
       </div>
     )
   }

@@ -10,9 +10,9 @@ export const SummernoteFocusOption = () => {
         <h1>Focus</h1>
         <p>포커스를 줍니다.</p>
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ focus: true }} />    
+  <ReactSummernoteLite id="sample" focus={true} />    
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ focus: boolean('focus', true) }} />
+        <ReactSummernoteLite id="sample" focus={boolean('focus', true)} />
       </div>
     )
   }

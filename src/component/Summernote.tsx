@@ -10,21 +10,50 @@ function getElement(id: string) {
     return document.getElementById(getContainerId(id))
 }
 
-function Summernote(props: SummernoteProps) {
+function Summernote({value, children, opt, ...props}: SummernoteProps) {
+    const {
+        onInit,
+        onBlur,
+        onBlurCodeview,
+        onChange,
+        onEnter,
+        onFocus,
+        onImageUpload,
+        onKeydown,
+        onKeyup,
+        onMousedown,
+        onMouseup,
+        onPaste,        
+    } = props;
+
+    const callbacks = {
+        onInit,
+        onBlur,
+        onBlurCodeview,
+        onChange,
+        onEnter,
+        onFocus,
+        onImageUpload,
+        onKeydown,
+        onKeyup,
+        onMousedown,
+        onMouseup,
+        onPaste,              
+    }
     useEffect(() => {
 
-        const dialogsInBody = typeof props.opt?.dialogsInBody === 'undefined' ? true : props.opt.dialogsInBody;
+        const dialogsInBody = typeof props.dialogsInBody === 'undefined' ? true : props.dialogsInBody;
 
-        ($(getElement(props.id)) as any).summernote({ ...props.opt, dialogsInBody });
+        ($(getElement(props.id)) as any).summernote({ ...props, callbacks, ...opt, dialogsInBody });
 
         return () => {
             ($(getElement(props.id)) as any).summernote('destroy');
         } 
-    }, [props.opt])
+    }, [props])
 
     return (
         <div className="react-summernote">
-            <div id={`${props.id}-container`} className="react-summernote-container">{props.children}</div>
+            <div id={`${props.id}-container`} className="react-summernote-container">{value || children}</div>
         </div>
     )
 }

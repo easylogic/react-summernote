@@ -11,15 +11,9 @@ export const SummernoteFontSizeUnits = () => {
         <p>You can set the available font size units with the fontSizeUnits option.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    fontSizeUnits: ['px', 'pt'],
-    toolbar: [
-      ['f', ['fontsize', 'fontsizeunit']]
-    ]    
-  }} />
+  <ReactSummernoteLite id="sample" fontSizeUnits={['px', 'pt']} />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          fontSizeUnits: ['px', 'pt'],
+        <ReactSummernoteLite id="sample" fontSizeUnits={['px', 'pt']} opt={{ 
           toolbar: [
             ['f', ['fontsize', 'fontsizeunit']]
           ]

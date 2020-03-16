@@ -9,14 +9,10 @@ export const DisableGrammarCommand = () => {
         <h1>Disable Grammarly Browser Addon</h1>
         <p>You can disable the Grammarly Browser Addon (currently researching other Grammar Addons for their disabling options) by using the disableGrammar option.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          disableGrammar: false
-        }} />
+        <ReactSummernoteLite id="sample" disableGrammar={false} />
       `}</pre>
 
-        <ReactSummernoteLite id="sample" opt={{ 
-          disableGrammar: false
-        }} />
+        <ReactSummernoteLite id="sample" disableGrammar={false} />
       </div>
     )
   }

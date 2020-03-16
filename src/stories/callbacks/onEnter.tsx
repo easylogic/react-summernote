@@ -8,23 +8,19 @@ export const OnEnterCallback = () => {
       <div style={defaultStyle}>
         <h1 >onEnter</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onEnter: (e: any) => {
+        <ReactSummernoteLite id="sample"
+            onEnter={(e: any) => {
               console.log('Enter/Return key pressed, shift is ', e.shiftKey);
-            }
-          }
-        }} />
+            }}
+        />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onEnter: (e: any) => {
+        <ReactSummernoteLite id="sample"
+            onEnter={(e: any) => {
               console.log('Enter/Return key pressed, shift is ', e.shiftKey);
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

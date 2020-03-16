@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs, text } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const InsertImageCommand = () => {
     let $note: any = null; 
     function doInsertImage () {
@@ -20,10 +21,8 @@ export const InsertImageCommand = () => {
         <h1>insertImage</h1>
         <p>insert an image</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              // default insert image 
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          // default insert image 
               note.summernote('insertImage', 'https://summernote.org/img/img_main_picture-big.jpg')
 
               // append alt text 
@@ -34,14 +33,12 @@ export const InsertImageCommand = () => {
                 $image.css('width', $image.width() / 3);
                 $image.attr('data-filename', 'retriever');
               })
-            }
-          }
-        }} />
+        }} />                
       `}</pre>
         <button onClick={doInsertImage}>insertImage https://summernote.org/img/img_main_picture-big.jpg </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

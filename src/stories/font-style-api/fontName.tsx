@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const FontNameCommand = () => {
     let $note: any = null; 
     function doFontName () {
@@ -15,18 +16,14 @@ export const FontNameCommand = () => {
         <h1>fontName</h1>
         <p>Set font family.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              note.summernote('fontName', 'Arial');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('fontName', 'Arial');
+        }} />                
       `}</pre>
         <button onClick={doFontName}>fontName Arial</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

@@ -17,13 +17,9 @@ export const SummernoteFontNames = () => {
 </pre>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New']
-  }} />
+  <ReactSummernoteLite id="sample" fontNames={['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New']}/>
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New']
-        }} />
+        <ReactSummernoteLite id="sample" fontNames={['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New']}/>
       </div>
     )
   }

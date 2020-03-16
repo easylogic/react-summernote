@@ -8,23 +8,20 @@ export const OnFocusCallback = () => {
       <div style={defaultStyle}>
         <h1 >onFocus</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onFocus: () => {
+
+          <ReactSummernoteLite id="sample"
+            onFocus={() => {
               console.log('Editable area is focused');
-            }
-          }
-        }} />
+            }}
+          />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onFocus: () => {
-              console.log('Editable area is focused');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample"
+          onFocus={() => {
+            console.log('Editable area is focused');
+          }}
+        />
       </div>
     )
   }

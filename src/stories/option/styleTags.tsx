@@ -22,21 +22,17 @@ export const SummernoteStyleTags = () => {
 </pre>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    styleTags: [
+  <ReactSummernoteLite id="sample" styleTags={[
       'p',
       { title: 'Blockquote', tag: 'blockquote', className: 'blockquote', value: 'blockquote' },
       'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-    ],
-  }} />
+    ]} />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          styleTags: [
+        <ReactSummernoteLite id="sample" styleTags={[
            'p',
             { title: 'Blockquote', tag: 'blockquote', className: 'blockquote', value: 'blockquote' },
            'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'
-          ],
-        }} />
+          ]} />
       </div>
     )
   }

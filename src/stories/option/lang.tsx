@@ -14,13 +14,13 @@ export const SummernoteI18nOtherLanguage = () => {
   import 'jquery'
   import 'summernote/dist/lang/summernote-ko-KR';
   
-  <ReactSummernoteLite id="sample" opt={{ lang: 'ko-KR'} } />
+  <ReactSummernoteLite id="sample" lang="ko-KR" />
             
             `}
           </pre>
   
           <a href="https://github.com/summernote/summernote/tree/master/lang" target="_win">More languages</a>  
-        <ReactSummernoteLite id="sample" opt={{ lang: 'ko-KR'} } />
+        <ReactSummernoteLite id="sample" lang="ko-KR" />
       </div>
     )
   }

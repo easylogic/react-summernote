@@ -13,23 +13,17 @@ export const OnChangeCallback = () => {
           <li>Chrome, FF: input</li>
         </ul>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onChange: (contents: string, $editable: any) => {
-              console.log('onChange:', contents, $editable);
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onChange={(contents: string, $editable: any) => {
+          console.log('onChange:', contents, $editable);
+        }}
+    />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onChange: (contents: string, $editable: any) => {
+        <ReactSummernoteLite id="sample" onChange={(contents: string, $editable: any) => {
               console.log('onChange:', contents, $editable);
-            }
-          }
-        }} />
+            }}
+        />
       </div>
     )
   }

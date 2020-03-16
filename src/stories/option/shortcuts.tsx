@@ -11,13 +11,9 @@ export const SummernoteShortcuts = () => {
         <p>You can disable custom shortcuts with the shortcuts option.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    shortcuts: false
-  }} />
+  <ReactSummernoteLite id="sample" shortcuts={false} />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          shortcuts: boolean('shortcuts', false)
-        }} />
+        <ReactSummernoteLite id="sample" shortcuts={boolean('shortcuts', false)}/>
       </div>
     )
   }

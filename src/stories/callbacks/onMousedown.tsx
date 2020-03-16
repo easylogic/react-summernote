@@ -8,23 +8,20 @@ export const OnMousedownCallback = () => {
       <div style={defaultStyle}>
         <h1 >onMousedown</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onMousedown: function(e: any) {
+
+          <ReactSummernoteLite id="sample"
+            onMousedown={(e: any) => {
               console.log('mousedown event is fired', e );
-            }
-          }
-        }} />
+            }}
+          />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onMousedown: function(e: any) {
+        <ReactSummernoteLite id="sample"
+            onMousedown={(e: any) => {
               console.log('mousedown event is fired', e );
-            }
-          }
-        }} />
+            }}
+          />
       </div>
     )
   }

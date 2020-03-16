@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs, text } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const InsertNodeCommand = () => {
     let $note: any = null; 
     function doInsertNode () {
@@ -20,20 +21,16 @@ export const InsertNodeCommand = () => {
         <h1>insertNode</h1>
         <p>insert an Node</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              const div = document.createElement('div')
-              div.innerHTML = \`<span>${text('my_text', 'Hello, World')}</span>\`
-              note.summernote('insertNode', div)
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          const div = document.createElement('div')
+          div.innerHTML = \`<span>${text('my_text', 'Hello, World')}</span>\`
+          note.summernote('insertNode', div)
+        }} />                
       `}</pre>
         <button onClick={doInsertNode}>insertNode Hello, World </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

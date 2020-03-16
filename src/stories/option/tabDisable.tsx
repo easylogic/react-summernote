@@ -11,13 +11,9 @@ export const SummernoteTabDisable = () => {
         <p>You can disable TAB/Shift+Tab intereaction with the tabDisable option. This will allow tabbing through fields in Forms.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    tabDisable: false
-  }} />
+  <ReactSummernoteLite id="sample" tabDisable={false}/>
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          tabDisable: boolean('tabDisable', false)
-        }} />
+        <ReactSummernoteLite id="sample" tabDisable={boolean('tabDisable', false)} />
       </div>
     )
   }

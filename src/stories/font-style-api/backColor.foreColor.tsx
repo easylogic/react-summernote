@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const BackColorForeColorCommand = () => {
     let $note: any = null; 
     function doBackColor () {
@@ -25,20 +26,16 @@ export const BackColorForeColorCommand = () => {
         <h1>backColor, foreColor</h1>
         <p>Set the Background or Foreground color.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                note.summernote('backColor', 'yellow')  
-                note.summernote('foreColor', 'red')  
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('backColor', 'yellow')  
+          note.summernote('foreColor', 'red')  
+        }} />                
       `}</pre>
         <button onClick={doBackColor}>backColor yellow </button>
         <button onClick={doForeColor}>foreColor red </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

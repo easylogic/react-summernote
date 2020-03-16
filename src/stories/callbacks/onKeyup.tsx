@@ -8,23 +8,19 @@ export const OnKeyupCallback = () => {
       <div style={defaultStyle}>
         <h1 >onKeyup</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onKeyup: function(e: any) {
+          <ReactSummernoteLite id="sample"
+            onKeyup={(e: any) => {
               console.log('Key is released:', e.keyCode);
-            }
-          }
-        }} />
+            }}
+          />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onKeyup: function(e: any) {
-              console.log('Key is released:', e.keyCode);
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample"
+          onKeyup={(e: any) => {
+            console.log('Key is released:', e.keyCode);
+          }}
+        />
       </div>
     )
   }

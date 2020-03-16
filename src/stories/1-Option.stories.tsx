@@ -4,8 +4,7 @@ import 'summernote/dist/lang/summernote-ko-KR';
 import { withKnobs} from "@storybook/addon-knobs";
 
 
-
-
+export { SummernoteAirModeOption } from './option/airMode';
 export { SummernoteHeightOption } from './option/height';
 export { SummernoteFocusOption } from './option/focus';
 export { SummernoteI18nOtherLanguage } from './option/lang';
@@ -21,6 +20,7 @@ export { SummernoteDialogsInBody } from './option/dialogsInBody';
 export { SummernoteDisableDragAndDrop } from './option/disableDragAndDrop';
 export { SummernoteShortcuts } from './option/shortcuts';
 export { SummernoteTabDisable } from './option/tabDisable';
+export { SummernoteHintOption } from './option/hint';
 
 
 export default {

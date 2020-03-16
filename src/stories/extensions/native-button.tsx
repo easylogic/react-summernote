@@ -10,33 +10,33 @@ export const NativeButtonExtension = () => {
       <pre>{`
         import ReactSummernoteLite, { createSummernoteButton } from 'src/summernote/ReactSummernoteLite';
 
-        <ReactSummernoteLite id="sample" opt={{ 
-          toolbar: [
+        <ReactSummernoteLite id="sample" 
+          toolbar={[
             ['group', ['default']]
-          ],
-          buttons: {
+          ]}
+          buttons={{
             default: createSummernoteButton({
               title: 'default button',
               onClick: (context: any) => {
                 context.invoke('insertText', 'default');
               }
             })
-          },          
-       }} />
+          }}  
+        />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-            toolbar: [
+        <ReactSummernoteLite id="sample" 
+            toolbar={[
               ['group', ['default']]
-            ],
-            buttons: {
+            ]}
+            buttons={{
               default: createSummernoteButton({
                 title: 'default button',
                 onClick: (context: any) => {
                   context.invoke('insertText', 'default');
                 }
               })
-            },          
-         }} />
+            }}  
+          />
       </div>
     )
   }

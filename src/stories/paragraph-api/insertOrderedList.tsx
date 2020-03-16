@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const InsertOrderedListCommand = () => {
     let $note: any = null; 
     function doInsertOrderedList () {
@@ -21,20 +22,16 @@ export const InsertOrderedListCommand = () => {
         <h1>insertOrderedList, insertUnorderedList</h1>
         <p>Toggle ordered list or unordered list</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              note.summernote('insertOrderedList');
-              note.summernote('insertUnorderedList');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('insertOrderedList');
+          note.summernote('insertUnorderedList');
+        }} />                
       `}</pre>
         <button onClick={doInsertOrderedList}>insertOrderedList</button>
         <button onClick={doInsertUnorderedList}>insertUnorderedList</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

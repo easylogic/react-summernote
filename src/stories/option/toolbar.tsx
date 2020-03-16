@@ -29,18 +29,14 @@ export const SummernoteToolbar = () => {
         <h2>Custom Toolbar</h2>
           <pre>
             {`
-    <ReactSummernoteLite id="sample2" opt={{
-      toolbar: [
+    <ReactSummernoteLite id="sample2" toolbar={[
         ['group',['fontsize', 'color']]
-      ]
-    }} />          
+    ]} />          
             `}
           </pre>
-        <ReactSummernoteLite id="sample2" opt={{
-          toolbar: [
+        <ReactSummernoteLite id="sample2" toolbar={[
             ['group',['fontsize', 'color']]
-          ]
-        }} />
+        ]} />
   
         <h2>Feature List</h2>
         <table style={tableStyle}>

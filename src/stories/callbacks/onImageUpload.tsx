@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 
 export const OnImageUpdateCallback = () => {
     let $note: any = null; 
@@ -14,34 +15,30 @@ export const OnImageUpdateCallback = () => {
         <pre>{`
         let $note: any = null; 
 
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onInit: ({ note }: any) => {
+
+        <ReactSummernoteLite id="sample" 
+            onInit ={({ note }: SummernoteCallbackInitProps) => {
               $note = note; 
-            },
-            onImageUpload: function(files: any) {
-              // upload image to server and create imgNode...
-              console.log(files);
-              // $note.summernote('insertNode', imgNode);
-            }
-          }
-        }} />
-        `}
-        </pre>        
-  
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onInit: ({ note }: any) => {
-              $note = note; 
-            },
-            onImageUpload: function(files: any) {
+            }}
+            onImageUpload={(files: File[]) => {
               // upload image to server and create imgNode...
               console.log(files);
               // $note.summernote('insertNode', imgNode);
               console.log($note);
-            }
-          }
-        }} />
+            }} />
+        `}
+        </pre>        
+  
+        <ReactSummernoteLite id="sample" 
+            onInit ={({ note }: SummernoteCallbackInitProps) => {
+              $note = note; 
+            }}
+            onImageUpload={(files: File[]) => {
+              // upload image to server and create imgNode...
+              console.log(files);
+              // $note.summernote('insertNode', imgNode);
+              console.log($note);
+            }} />
       </div>
     )
   }

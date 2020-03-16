@@ -40,23 +40,19 @@ export const SummernotePopover = () => {
         <h2>Custom popover</h2>
           <pre>
             {`
-    <ReactSummernoteLite id="sample2" opt={{
-      popover: {
+    <ReactSummernoteLite id="sample2" popover={{
         air: [
           ['color', ['color']],
           ['font', ['bold', 'underline', 'clear']]
         ]
-      }
     }} />          
             `}
           </pre>
-        <ReactSummernoteLite id="sample2" opt={{
-          popover: {
-            air: [
-              ['color', ['color']],
-              ['font', ['bold', 'underline', 'clear']]
-            ]
-          }
+        <ReactSummernoteLite id="sample2" popover={{
+          air: [
+            ['color', ['color']],
+            ['font', ['bold', 'underline', 'clear']]
+          ]
         }} />
   
         <h2>Feature List</h2>

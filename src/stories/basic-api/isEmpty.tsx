@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const IsEmptyCommand = () => {
     let $note: any = null; 
     function doIsEmpty () {
@@ -22,20 +23,16 @@ export const IsEmptyCommand = () => {
             So Summernote supports this method for helping to check if editor content is empty.
         </p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                if (note.summernote('isEmpty')) {
-                  console.log('summernote is empty')
-                }
-            }
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          if (note.summernote('isEmpty')) {
+            console.log('summernote is empty')
           }
-        }} />
+        }} />        
       `}</pre>
         <button onClick={doIsEmpty}>check isEmpty </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note; 
+        }} />
       </div>
     )
   }

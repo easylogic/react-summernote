@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const FontStyleCommand = () => {
     let $note: any = null; 
     function doItalic () {
@@ -37,24 +38,20 @@ export const FontStyleCommand = () => {
         <h1>bold, italic, underline, strikethrough</h1>
         <p>Set font style.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-              note.summernote('bold');
-              note.summernote('italic');
-              note.summernote('underline');
-              note.summernote('strikethrough');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('bold');
+          note.summernote('italic');
+          note.summernote('underline');
+          note.summernote('strikethrough');
+        }} />                
       `}</pre>
         <button onClick={doBold}>bold</button>
         <button onClick={doItalic}>italic </button>
         <button onClick={doUnderline}>underline </button>
         <button onClick={doStrikeThrough}>strikethrough</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
-          $note = note
-        }}}} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          $note = note;
+        }} />        
       </div>
     )
   }

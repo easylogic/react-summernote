@@ -44,27 +44,9 @@ export function createSummernoteButton (opt: SummernoteCustomButtonProps): any {
     }
 }
 
-export function createNativeButton (opt: any) {
-    return (context: SummernoteContext) => {
-        const ui: any = context.ui; 
-
-        const button = ui.button({
-            // contents: createSummernoteButton(opt.contents),
-            container: opt.container || 'body',
-            tooltip: opt.tootip || 'hello',
-            click: function () {
-                opt.click && opt.click(context);
-            }
-        });
-
-        return button.render();   // return button as jquery object
-    }
-
-}
-
-function ReactSummernoteLite(props: SummernoteProps) {
+function ReactSummernoteLite({children, ...props}: SummernoteProps) {
     return (
-        <Summernote id={props.id} opt={props.opt}>{props.children}</Summernote>
+        <Summernote {...props}>{children}</Summernote>
     )
 }
 

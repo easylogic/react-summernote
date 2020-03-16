@@ -8,23 +8,19 @@ export const OnMouseupCallback = () => {
       <div style={defaultStyle}>
         <h1 >onMouseup</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onMouseup: function(e: any) {
-              console.log('mouseup event is fired', e );
-            }
-          }
-        }} />
+            <ReactSummernoteLite id="sample"
+              onMouseup={(e: any) => {
+                console.log('mouseup event is fired', e);
+              }}
+            />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onMouseup: function(e: any) {
+        <ReactSummernoteLite id="sample"
+            onMouseup={(e: any) => {
               console.log('mouseup event is fired', e);
-            }
-          }
-        }} />
+            }}
+          />
       </div>
     )
   }

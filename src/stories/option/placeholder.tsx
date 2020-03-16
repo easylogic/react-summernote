@@ -11,14 +11,9 @@ export const SummernotePlaceholder = () => {
         <p>You can define a placeholder with the placeholder option.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    placeholder: 'write here...'
-
-  }} />
+  <ReactSummernoteLite id="sample" placeholder='write here...' />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          placeholder: text('placeholder', 'write here...')
-        }} />
+        <ReactSummernoteLite id="sample" placeholder={text('placeholder', 'write here...')} />
       </div>
     )
   }

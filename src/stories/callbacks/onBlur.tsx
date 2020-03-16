@@ -8,23 +8,16 @@ export const OnBlurCallback = () => {
       <div style={defaultStyle}>
         <h1 >onBlur</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onBlur: () => {
-              console.log('Editable area loses focus');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onBlur={(e: any) => {
+            console.log('Editable area loses focus', e);
+        }}
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onBlur: () => {
-              console.log('Editable area loses focus');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onBlur={(e: any) => {
+              console.log('Editable area loses focus', e);
+          }}
+        />
       </div>
     )
   }

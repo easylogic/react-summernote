@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const DisableCommand = () => {
     let $note: any = null; 
     function doDisable () {
@@ -19,18 +20,14 @@ export const DisableCommand = () => {
 
 </p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                note.summernote('disable');
-            }
-          }
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('disable');
         }} />
       `}</pre>
         <button onClick={doDisable}>disable summernote</button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
           $note = note
-        }}}} />
+        }} />
       </div>
     )
   }

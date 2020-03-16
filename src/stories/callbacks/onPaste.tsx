@@ -8,23 +8,19 @@ export const OnPasteCallback = () => {
       <div style={defaultStyle}>
         <h1 >onPaste</h1>
         <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onPaste: function(e: any) {
-              console.log('Called event paste', e);
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample"
+          onPaste={(e: any) => {
+            console.log('Called event paste', e);
+          }}
+        />
         `}
         </pre>        
   
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: {
-            onPaste: function(e: any) {
-              console.log('Called event paste', e);
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample"
+          onPaste={(e: any) => {
+            console.log('Called event paste', e);
+          }}
+        />
       </div>
     )
   }

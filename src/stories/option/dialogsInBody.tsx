@@ -11,14 +11,9 @@ export const SummernoteDialogsInBody = () => {
         <p>Dialogs can be placed in body, not within Summernote. If you’re using Summernote within a modal dialog, please set this option as true.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    dialogsInBody: true
-
-  }} />
+  <ReactSummernoteLite id="sample" dialogsInBody={true} />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          dialogsInBody: true
-        }} />
+        <ReactSummernoteLite id="sample" dialogsInBody={true} />
       </div>
     )
   }

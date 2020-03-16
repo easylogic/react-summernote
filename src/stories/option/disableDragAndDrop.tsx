@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { withKnobs } from "@storybook/addon-knobs"
+import { withKnobs, boolean } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 
@@ -11,14 +11,9 @@ export const SummernoteDisableDragAndDrop = () => {
         <p>You can disable drag and drop with the disableDragAndDrop option.</p>
 
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ 
-    disableDragAndDrop: true
-
-  }} />
+  <ReactSummernoteLite id="sample" disableDragAndDrop={true} />
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ 
-          disableDragAndDrop: true
-        }} />
+        <ReactSummernoteLite id="sample" disableDragAndDrop={boolean('disableDragAndDrop', true)} />
       </div>
     )
   }

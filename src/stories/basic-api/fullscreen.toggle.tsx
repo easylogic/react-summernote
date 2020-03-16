@@ -2,6 +2,7 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
+import { SummernoteCallbackInitProps } from 'src';
 export const FullScreenToggleCommand = () => {
 
     let $note: any = null; 
@@ -19,18 +20,14 @@ export const FullScreenToggleCommand = () => {
         <h1>FullScreen.toggle</h1>
         <p>You can toggle editable/codable view by API.</p>
       <pre>{`
-        <ReactSummernoteLite id="sample" opt={{ 
-          callbacks: { 
-            onInit: ({ note }: any ) => {
-                note.summernote('fullscreen.toggle');
-            }
-          }
-        }} />
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
+          note.summernote('fullscreen.toggle');
+        }} />      
       `}</pre>
       <button onClick={doFullScreen}>Fullscreen </button>
-        <ReactSummernoteLite id="sample" opt={{ callbacks: { onInit: ({ note }: any ) => {
+        <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps ) => {
           $note = note; 
-        }}}} />
+        }} />
       </div>
     )
   }

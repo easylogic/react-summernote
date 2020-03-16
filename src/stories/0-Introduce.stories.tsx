@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactSummernoteBS4 from 'src/summernote/ReactSummernoteBS4';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 
 export default {
@@ -43,13 +42,10 @@ import ReactSummernoteBS4 from '@easylogic/react-summernote/summernote-bs4'
 import '@easylogic/react-summernote/summernote-bs4.css'
 
 const EditorComponent = () => {
-  return <ReactSummernoteBS4 id="sample" opt={{ 
-    callbacks: { 
-      onInit: ({ note }: any ) => {
-        $note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
-      }
-    }
-  }} />
+  return <ReactSummernoteBS4 id="sample" onInit={({ note }: any ) => {
+              note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+          }} 
+          />
 }
 
 export default EditorComponent
@@ -62,13 +58,10 @@ import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite'
 import '@easylogic/react-summernote/summernote-lite.css'
 
 const EditorComponent = () => {
-  return <ReactSummernoteLite id="sample" opt={{ 
-    callbacks: { 
-      onInit: ({ note }: any ) => {
-        note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
-      }
-    }
-  }} />
+  return <ReactSummernoteLite id="sample" onInit={({ note }: any ) => {
+               note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+           }} 
+        />
 }
 
 export default EditorComponent

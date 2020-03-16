@@ -17,9 +17,9 @@ export const SummernoteBlockquoteBreakingLevel = () => {
         <p>1 - Break the first blockquote in the ancestors list.</p>
         <p>2 - Break all blockquotes, so that the new paragraph is not quoted. (default)</p>
       <pre>{`
-  <ReactSummernoteLite id="sample" opt={{ blockquoteBreakingLevel: 2 }} />    
+  <ReactSummernoteLite id="sample" blockquoteBreakingLevel={2} />    
       `}</pre>
-        <ReactSummernoteLite id="sample" opt={{ blockquoteBreakingLevel: number('blockquoteBreakingLevel',2) }} />
+        <ReactSummernoteLite id="sample" blockquoteBreakingLevel={number('blockquoteBreakingLevel',2)} />
       </div>
     )
   }
