@@ -45,11 +45,13 @@ export function createSummernoteButton (opt: SummernoteCustomButtonProps): any {
     }
 }
 
-export function createSummernotePlugin (name: string, callback: (context: SummernoteContext) => void) {
+export function createSummernotePlugin (name: string, callback: (context: SummernoteContext, $: JQueryStatic) => void) {
     const jQuery = ($ as any)
 
     jQuery.extend(jQuery.summernote.plugins, {
-        [name]: callback
+        [name]: (context:SummernoteContext) => {
+            callback(context, jQuery)
+        } 
     })
 }
 
