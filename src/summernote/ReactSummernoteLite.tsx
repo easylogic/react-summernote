@@ -1,5 +1,6 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom'
+import $ from 'jquery';
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
 import Summernote from 'src/component/Summernote';
@@ -42,6 +43,14 @@ export function createSummernoteButton (opt: SummernoteCustomButtonProps): any {
             return el;
         }
     }
+}
+
+export function createSummernotePlugin (name: string, callback: (context: SummernoteContext) => void) {
+    const jQuery = ($ as any)
+
+    jQuery.extend(jQuery.summernote.plugins, {
+        [name]: callback
+    })
 }
 
 function ReactSummernoteLite({children, ...props}: SummernoteProps) {

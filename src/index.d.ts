@@ -1,5 +1,4 @@
-declare module '*.mdx';
-import { ReactNode, FunctionComponent } from "react";
+import { ReactNode, FunctionComponent, Context } from "react";
 
 interface SummernoteHintProps {
     words?: any[];
@@ -42,6 +41,11 @@ interface SummernoteExtensionButtonProps {
     [x: string]: (context: SummernoteContext) => any;
 }
 
+interface SummernoteCodemirrorProps {
+    theme?: string;
+    [x: string]: any;
+}
+
 interface SummernoteProps {
     id: string; 
     opt?: any;
@@ -67,6 +71,7 @@ interface SummernoteProps {
     tabDisable?: boolean;
     disableGrammar?: boolean;
     spellCheck?: boolean;
+    codemirror?: SummernoteCodemirrorProps;
     toolbar?: SummernoteToolbarItemProps[];
     buttons?: SummernoteExtensionButtonProps;
     
@@ -87,9 +92,11 @@ interface SummernoteProps {
 }
 
 interface SummernoteContext {
-    invoke: (...args: any[]) => void; 
-    $note: any;
-    ui: any;
+    invoke?: (...args: any[]) => void; 
+    $note?: any;
+    ui?: any;
+    memo?: (key: string, value: any) => void;
+    options?: any;
 }
 
 
