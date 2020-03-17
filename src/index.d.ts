@@ -72,7 +72,9 @@ interface SummernoteProps {
     disableGrammar?: boolean;
     spellCheck?: boolean;
     codemirror?: SummernoteCodemirrorProps;
-    toolbar?: SummernoteToolbarItemProps[];
+    toolbar?: SummernoteToolbarItemProps[]|boolean;
+    toolbarPosition?: 'top' | 'bottom';
+    followingToolbar?: boolean; 
     buttons?: SummernoteExtensionButtonProps;
     
 

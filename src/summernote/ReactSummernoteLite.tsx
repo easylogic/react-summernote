@@ -2,10 +2,10 @@ import React from 'react';
 import * as ReactDOM from 'react-dom'
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
-import Summernote, {SummernotePlugin, createSummernotePlugin} from 'src/component/Summernote';
+import Summernote, {SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut} from 'src/component/Summernote';
 import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps } from 'src/index';
 
-export { SummernotePlugin, createSummernotePlugin }
+export { SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut }
 
 interface ButtonProps {
     container?: string;

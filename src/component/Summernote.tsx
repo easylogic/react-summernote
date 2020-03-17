@@ -11,6 +11,11 @@ export class SummernotePlugin {
         this.context = context;
         this.$ = $; 
     }
+
+    get lang () {
+        console.log(this.context.options.langInfo)
+        return this.context.options.langInfo;
+    }
 }
 
 export function createSummernotePlugin (name: string, PluginClass: SummernotePluginInterface) {
@@ -25,6 +30,31 @@ export function createSummernotePlugin (name: string, PluginClass: SummernotePlu
             return new PluginClass(context, jQuery)
         } 
     })
+}
+
+export function setSummernoteLang (langInfo: any) {
+    const jQuery = ($ as any)
+
+    jQuery.extend(true, jQuery.summernote.lang, langInfo);
+}
+
+export function setSummernoteShortcut (...args: any[]) {
+    const jQuery = ($ as any)
+
+    if (args.length === 1) {
+        jQuery.extend(true, jQuery.summernote.options.keyMap, args[0]);
+    } else if (args.length === 2) {
+        const [pcKeyMap, macKeyMap] = args[0].split(',');
+        jQuery.extend(true, jQuery.summernote.options.keyMap, {
+            pc: {
+                [pcKeyMap]: args[1]
+            },
+            mac: {
+                [macKeyMap || pcKeyMap]: args[1]
+            }
+        })
+    }
+
 }
 
 function getContainerId (id: string) {

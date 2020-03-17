@@ -1,9 +1,23 @@
 import React, { useState, useEffect } from 'react'; 
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin, setSummernoteShortcut, setSummernoteLang } from 'src/summernote/ReactSummernoteLite';
 import { SummernoteButtonProps, SummernoteContext } from 'src';
 
+setSummernoteShortcut('CTRL+ENTER,CMD+ENTER', 'full-custom.externalCommand')
+
+setSummernoteLang({
+  'en-US': {
+    'full-custom': {
+      title: 'Full-Custom Summernote plugin'
+    }
+  },
+  'ko-KR': {
+    'full-custom': {
+      title: '풀 커스텀 서머노트 플러그인'
+    }
+  }
+})
 
 createSummernotePlugin('full-custom', class extends SummernotePlugin {
 
@@ -35,7 +49,7 @@ createSummernotePlugin('full-custom', class extends SummernotePlugin {
   createButtons () {
     // button name: 'custom2' 
     this.context.memo('button.custom2', createSummernoteButton({
-      title:'custom2',
+      title: this.lang['full-custom'].title,
       onClick: () => {
         this.context.invoke('full-custom.externalCommand'); // custom command call 
       }
@@ -82,10 +96,32 @@ export const CustomPlugin = () => {
       <div style={defaultStyle}>
         <h1>Define Custom Plugin</h1>
       <pre>{`
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin, setSummernoteShortcut, setSummernoteLang  } from 'src/summernote/ReactSummernoteLite';
+
+
+setSummernoteShortcut({
+  pc: {
+    'CTRL+ENTER': 'sample.externalCommand'
+  },
+  mac: {
+    'CMD+ENTER': 'sample.externalCommand'
+  }
+})
+
+setSummernoteLang({
+  'en-US': {
+    sample: {
+      title: 'Full-Custom Summernote plugin'
+    }
+  },
+  'ko-KR': {
+    sample: {
+      title: '풀 커스텀 서머노트 플러그인'
+    }
+  }
+})
 
 // plugin name : sample 
-
 createSummernotePlugin('sample', class extends SummernotePlugin {
 
   events = {
@@ -116,7 +152,7 @@ createSummernotePlugin('sample', class extends SummernotePlugin {
   createButtons () {
     // button name: 'custom2' 
     this.context.memo('button.custom2', createSummernoteButton({
-      title:'custom2',
+      title: this.lang.sample.title,
       onClick: () => {
         this.context.invoke('full-custom.externalCommand'); // custom command call 
       }
@@ -153,6 +189,7 @@ createSummernotePlugin('sample', class extends SummernotePlugin {
 
       `}</pre>
           <ReactSummernoteLite id="sample" 
+            lang="ko-KR"
             toolbar={[
               ['group', ['custom', 'custom2']]
             ]}
