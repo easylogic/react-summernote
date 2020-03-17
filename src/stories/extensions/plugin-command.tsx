@@ -1,14 +1,14 @@
 import React from 'react'; 
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin } from 'src/summernote/ReactSummernoteLite';
-import { SummernoteButtonProps, SummernoteContext } from 'src';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import { SummernoteButtonProps } from 'src';
 
 
-createSummernotePlugin('sample2', function (context: SummernoteContext) {
- 
-  this.externalCommand = function () {
-    console.log('external command is called', context);
+createSummernotePlugin('sample2-command', class extends SummernotePlugin {
+  
+  externalCommand () {
+    console.log('external command is called', this.context);
   }
 
 })

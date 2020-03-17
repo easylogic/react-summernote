@@ -1,19 +1,22 @@
 import React from 'react'; 
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
 import { SummernoteContext } from 'src';
 
 
-createSummernotePlugin('sample3', function (context: SummernoteContext) {
-  // button name: 'hello' 
-  context.memo('button.hello3', createSummernoteButton({
-    title:'hello',
-    onClick: () => {
-      context.invoke('insertText', 'hello'); // custom command call 
-    }
-  }))
+createSummernotePlugin('sample3-button', class extends SummernotePlugin {
+  constructor (context: SummernoteContext, $: JQueryStatic) {
+    super(context, $);
 
+    // button name: 'hello' 
+    context.memo('button.hello3', createSummernoteButton({
+      title:'hello',
+      onClick: () => {
+        context.invoke('insertText', 'hello'); // custom command call 
+      }
+    }))
+  }
 })
 
 export const ButtonPlugin = () => {

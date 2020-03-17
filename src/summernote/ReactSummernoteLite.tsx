@@ -4,7 +4,7 @@ import $ from 'jquery';
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
 import Summernote from 'src/component/Summernote';
-import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps } from 'src/index';
+import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps, SummernotePluginInterface } from 'src/index';
 
 interface ButtonProps {
     container?: string;
@@ -45,12 +45,25 @@ export function createSummernoteButton (opt: SummernoteCustomButtonProps): any {
     }
 }
 
-export function createSummernotePlugin (name: string, callback: (context: SummernoteContext, $: JQueryStatic) => void) {
+export class SummernotePlugin {
+    context: SummernoteContext;
+    $: JQueryStatic;
+    constructor(context: SummernoteContext, $: JQueryStatic) {
+        this.context = context;
+        this.$ = $; 
+    }
+}
+
+export function createSummernotePlugin (name: string, PluginClass: SummernotePluginInterface) {
     const jQuery = ($ as any)
+
+    if (jQuery.summernote.plugins[name]) {
+        console.warn(`${name} plugin is already exists.`)
+    }
 
     jQuery.extend(jQuery.summernote.plugins, {
         [name]: (context:SummernoteContext) => {
-            callback(context, jQuery)
+            return new PluginClass(context, jQuery)
         } 
     })
 }

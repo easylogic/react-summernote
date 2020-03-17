@@ -120,6 +120,17 @@ interface SummernoteButtonGroup {
     [index: number]: HTMLElement;
 }
 
+
+interface SummernotePluginClass {
+    events?: any;
+    context?: SummernoteContext;
+    $?: JQueryStatic;
+}
+
+interface SummernotePluginInterface {
+    new (context: SummernoteContext, $: JQueryStatic): SummernotePluginClass;
+}
+
 declare global {
     interface Window {
         jQuery:any;

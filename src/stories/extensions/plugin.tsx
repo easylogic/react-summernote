@@ -1,49 +1,56 @@
 import React, { useState, useEffect } from 'react'; 
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
 import { SummernoteButtonProps, SummernoteContext } from 'src';
 
 
-createSummernotePlugin('sample', function (context: SummernoteContext) {
-  // button name: 'custom2' 
-  context.memo('button.custom2', createSummernoteButton({
-    title:'custom2',
-    onClick: () => {
-      context.invoke('sample.externalCommand'); // custom command call 
-    }
-  }))
+createSummernotePlugin('full-custom', class extends SummernotePlugin {
 
-  // This events will be attached when editor is initialized.
-  this.events = {
-    // This will be called after modules are initialized.
-    'summernote.init': function(we: any, e: any) {
-      console.log('summernote initialized', we, e);
+  events = {
+    'summernote.init' (we: any, e: any) {
+        console.log('summernote initialized', we, e);
     },
-    // This will be called when user releases a key on editable.
-    'summernote.keyup': function(we: any, e: any) {
+    'summernote.change' (we: any, e: any) {
       console.log('summernote keyup', we, e);
-    },
-  };      
-
-  const options = context.options;    // options 
-  this.initialize = function () {
-    console.log('summernote is intialized ', options);
+    }
   }
+
+  constructor (context: SummernoteContext, $: JQueryStatic) {
+    super(context, $);
+
+    this.createButtons();
+  }
+
+  initialize() {
+    console.log('summernote is intialized ', this.context.options);
+  } 
 
   // This methods will be called when editor is destroyed by $('..').summernote('destroy');
-  // You should remove elements on `initialize`.      
-  this.destroy = function () {
+  // You should remove elements on `initialize`.        
+  destroy() {
 
   }
 
-  this.externalCommand = function () {
+  createButtons () {
+    // button name: 'custom2' 
+    this.context.memo('button.custom2', createSummernoteButton({
+      title:'custom2',
+      onClick: () => {
+        this.context.invoke('full-custom.externalCommand'); // custom command call 
+      }
+    }))
+  }
+
+  // craete external command 
+  externalCommand() {
     console.log('external command is called');
   }
 
-  this.externalCommand2 = function () {
+  externalCommand2() {
     console.log('external command2 is called');
   }
+
 
 })
 
@@ -75,48 +82,56 @@ export const CustomPlugin = () => {
       <div style={defaultStyle}>
         <h1>Define Custom Plugin</h1>
       <pre>{`
-import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin } from 'src/summernote/ReactSummernoteLite';
+import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
 
 // plugin name : sample 
-createSummernotePlugin('sample', function (context: SummernoteContext) {
-  // button create 
-  context.memo('button.custom2', createSummernoteButton({
-    title:'custom2',
-    onClick: () => {
-      context.invoke('sample.externalCommand'); // custom command call 
-    }
-  }))
 
-  // This events will be attached when editor is initialized.
-  this.events = {
-    // This will be called after modules are initialized.
-    'summernote.init': function(we: any, e: any) {
-      console.log('summernote initialized', we, e);
+createSummernotePlugin('sample', class extends SummernotePlugin {
+
+  events = {
+    'summernote.init' (we: any, e: any) {
+        console.log('summernote initialized', we, e);
     },
-    // This will be called when user releases a key on editable.
-    'summernote.keyup': function(we: any, e: any) {
+    'summernote.change' (we: any, e: any) {
       console.log('summernote keyup', we, e);
-    },
-  };      
-
-  const options = context.options;    // options 
-  this.initialize = function () {
-    console.log('summernote is intialized ', options);
+    }
   }
+
+  constructor (context: SummernoteContext, $: JQueryStatic) {
+    super(context, $);
+
+    this.createButtons();
+  }
+
+  initialize() {
+    console.log('summernote is intialized ', this.context.options);
+  } 
 
   // This methods will be called when editor is destroyed by $('..').summernote('destroy');
-  // You should remove elements on \`initialize\`.      
-  this.destroy = function () {
+  // You should remove elements on \`initialize\`.        
+  destroy() {
 
   }
 
-  this.externalCommand = function () {
+  createButtons () {
+    // button name: 'custom2' 
+    this.context.memo('button.custom2', createSummernoteButton({
+      title:'custom2',
+      onClick: () => {
+        this.context.invoke('full-custom.externalCommand'); // custom command call 
+      }
+    }))
+  }
+
+  // craete external command 
+  externalCommand() {
     console.log('external command is called');
   }
 
-  this.externalCommand2 = function () {
+  externalCommand2() {
     console.log('external command2 is called');
   }
+
 
 })
 

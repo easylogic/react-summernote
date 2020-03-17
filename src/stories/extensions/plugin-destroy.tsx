@@ -1,16 +1,12 @@
 import React from 'react'; 
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
-import ReactSummernoteLite, { createSummernotePlugin } from 'src/summernote/ReactSummernoteLite';
-import { SummernoteContext } from 'src';
+import ReactSummernoteLite, { createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
 
-
-createSummernotePlugin('sample', function (context: SummernoteContext) {
-  const options = context.options;    // options 
-  this.destroy = function () {
-    console.log('summernote is destroyed ', options);
+createSummernotePlugin('sample-destroy', class extends SummernotePlugin {
+  destroy() {
+    console.log('summernote is destroyed ', this.context.options);
   }
-
 })
 
 export const DestoryPlugin = () => {
