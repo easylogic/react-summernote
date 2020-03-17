@@ -6,7 +6,13 @@ import { SummernoteContext } from 'src';
 
 
 createSummernotePlugin('sample', function (context: SummernoteContext) {
-  
+
+  console.log(this);
+  // you must define  to call event callback  
+  this.initialized = function () {
+
+  }
+
   // This events will be attached when editor is initialized.
   this.events = {
     // This will be called after modules are initialized.
@@ -19,10 +25,6 @@ createSummernotePlugin('sample', function (context: SummernoteContext) {
     },
   };      
 
-  // you must define  to call event callback  
-  this.initialized = function () {
-
-  }
 
 
 })

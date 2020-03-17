@@ -13,7 +13,7 @@ export const RangePasteHTMLCommand = () => {
     return (
       <div style={defaultStyle}>
         <h1 >pasteHTML(markup)</h1>
-        <p>insert html at current cursor</p>
+        <div>insert html at current cursor</div>
         <pre>{`
           const nodes = rng.pasteHTML('<div>summernote</div>')
         `}

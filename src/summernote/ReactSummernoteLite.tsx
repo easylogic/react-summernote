@@ -49,8 +49,8 @@ export function createSummernotePlugin (name: string, callback: (context: Summer
     const jQuery = ($ as any)
 
     jQuery.extend(jQuery.summernote.plugins, {
-        [name]: (context:SummernoteContext) => {
-            callback(context, jQuery)
+        [name]: function(context:SummernoteContext){
+            return callback.call(this, context, jQuery)
         } 
     })
 }
