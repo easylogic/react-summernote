@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "React extension for summernote",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/",
   "scripts": {
     "dev:lite": "webpack-dev-server --config ./config/lite/webpack.dev.config.js --progress",
@@ -10,8 +11,9 @@
     "dev": "npm run dev:bs4",
     "build:lite": "webpack --config ./config/lite/webpack.prod.config.js --progress",
     "build:bs4": "webpack --config ./config/bs4/webpack.prod.config.js --progress",
-    "build:bs3": "webpack --config ./config/bs3/webpack.prod.config.js --progress",
-    "build": "npm run build:lite && npm run build:bs4",
+    "build": "npm run build:lite && npm run build:bs4 && npm run copy",
+    "copy:type": "cp src/index.d.ts dist/",
+    "copy": "npm run copy:type",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
