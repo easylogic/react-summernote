@@ -1,14 +1,14 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom';
-import $ from 'jquery';
 import 'popper.js';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'summernote/dist/summernote-bs4';
 import 'summernote/dist/summernote-bs4.css';
-import Summernote from 'src/component/Summernote';
-import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps, SummernotePluginInterface } from 'src/index';
+import Summernote, {SummernotePlugin, createSummernotePlugin} from 'src/component/Summernote';
+import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps } from 'src/index';
 
+export { SummernotePlugin, createSummernotePlugin }
 
 interface ButtonProps {
     container?: string;
@@ -47,29 +47,6 @@ export function createSummernoteButton (opt: SummernoteCustomButtonProps): any {
             return el;
         }
     }
-}
-
-export class SummernotePlugin {
-    context: SummernoteContext;
-    $: JQueryStatic;
-    constructor(context: SummernoteContext, $: JQueryStatic) {
-        this.context = context;
-        this.$ = $; 
-    }
-}
-
-export function createSummernotePlugin (name: string, PluginClass: SummernotePluginInterface) {
-    const jQuery = ($ as any)
-
-    if (jQuery.summernote.plugins[name]) {
-        console.warn(`${name} plugin is already exists.`)
-    }
-
-    jQuery.extend(jQuery.summernote.plugins, {
-        [name]: (context:SummernoteContext) => {
-            return new PluginClass(context, jQuery)
-        } 
-    })
 }
 
 function ReactSummernoteBS4({children, ...props}: SummernoteProps) {

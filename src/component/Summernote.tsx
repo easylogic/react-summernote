@@ -1,6 +1,31 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
-import { SummernoteProps } from 'src/index';
+import { SummernoteProps, SummernoteContext, SummernotePluginInterface } from 'src/index';
+
+
+
+export class SummernotePlugin {
+    context: SummernoteContext;
+    $: JQueryStatic;
+    constructor(context: SummernoteContext, $: JQueryStatic) {
+        this.context = context;
+        this.$ = $; 
+    }
+}
+
+export function createSummernotePlugin (name: string, PluginClass: SummernotePluginInterface) {
+    const jQuery = ($ as any)
+
+    if (jQuery.summernote.plugins[name]) {
+        console.warn(`${name} plugin is already exists.`)
+    }
+
+    jQuery.extend(jQuery.summernote.plugins, {
+        [name]: (context:SummernoteContext) => {
+            return new PluginClass(context, jQuery)
+        } 
+    })
+}
 
 function getContainerId (id: string) {
     return `${id}-container`
