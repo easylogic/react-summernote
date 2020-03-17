@@ -62,8 +62,13 @@ export function createSummernotePlugin (name: string, PluginClass: SummernotePlu
     }
 
     jQuery.extend(jQuery.summernote.plugins, {
+<<<<<<< HEAD
         [name]: (context:SummernoteContext) => {
             return new PluginClass(context, jQuery)
+=======
+        [name]: function(context:SummernoteContext){
+            return callback.call(this, context, jQuery)
+>>>>>>> 60b0c47991e55d487692e2f64398364587bdbd16
         } 
     })
 }

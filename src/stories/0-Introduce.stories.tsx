@@ -79,19 +79,19 @@ export const IntroduceReactSummernoteBS4  = () => {
   return (
     <p style={{padding: '10px 40px'}}>
       <h2>Bootstrap v4</h2>
-      <p>
+      <div>
         <pre>
           {`
-import ReactSummernoteBS4 from '@easylogic/react-summernote/summernote-bs4';
-import '@easylogic/react-summernote/summernote-bs4.css';
+  import ReactSummernoteBS4 from '@easylogic/react-summernote/summernote-bs4';
+  import '@easylogic/react-summernote/summernote-bs4.css';
 
-<ReactSummernoteBS4 id="bootstrap" opt={{ ... }}/>
+  <ReactSummernoteBS4 id="bootstrap" opt={{ ... }}/>
           
           `}
         </pre>
-      </p>
-      {/* <ReactSummernoteBS4 id="bootstrap" /> */}
+      </div>    
     </p>    
+
   )
 }
 
