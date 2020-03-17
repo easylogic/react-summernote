@@ -4,17 +4,7 @@ import { defaultStyle } from "../util"
 import ReactSummernoteLite, { createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
 
 
-<<<<<<< HEAD
 createSummernotePlugin('sample-events', class extends SummernotePlugin {
-=======
-createSummernotePlugin('sample', function (context: SummernoteContext) {
-
-  console.log(this);
-  // you must define  to call event callback  
-  this.initialized = function () {
-
-  }
->>>>>>> 60b0c47991e55d487692e2f64398364587bdbd16
 
   // This events will be attached when editor is initialized.
   events = {
@@ -26,12 +16,7 @@ createSummernotePlugin('sample', function (context: SummernoteContext) {
     'summernote.keyup': (we: any, e: any) => {
       console.log('summernote keyup', we, e);
     },
-<<<<<<< HEAD
   }  
-=======
-  };      
-
->>>>>>> 60b0c47991e55d487692e2f64398364587bdbd16
 
 
 })
