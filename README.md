@@ -4,6 +4,10 @@ React extension for summernote
 This library support all summernote features. 
 
 
+# install 
+```
+npm install @easylogic/react-summernote 
+```
 
 # Getting Started 
 
