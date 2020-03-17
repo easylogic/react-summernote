@@ -5,6 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev:lite": "webpack-dev-server --config ./config/lite/webpack.dev.config.js --progress",
     "dev:bs4": "webpack-dev-server --config ./config/bs4/webpack.dev.config.js --progress",
