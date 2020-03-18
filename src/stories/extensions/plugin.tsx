@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
 import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin, setSummernoteShortcut, setSummernoteLang } from 'src/summernote/ReactSummernoteLite';
-import { SummernoteButtonProps, SummernoteContext } from 'src';
+import { SummernoteButtonProps, SummernoteContext } from 'types';
 
 setSummernoteShortcut('CTRL+ENTER,CMD+ENTER', 'full-custom.externalCommand')
 

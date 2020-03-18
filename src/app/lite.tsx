@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import * as ReactDOM from 'react-dom';
 import ReactSummernoteLite from '../summernote/ReactSummernoteLite';
-import { SummernoteContext, SummernoteButtonProps } from 'src/index';
+import { SummernoteContext, SummernoteButtonProps } from 'types';
 
 import 'jquery';
 import 'summernote/lang/summernote-ko-KR';

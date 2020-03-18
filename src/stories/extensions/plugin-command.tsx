@@ -2,7 +2,7 @@ import React from 'react';
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
 import ReactSummernoteLite, { createSummernoteButton, createSummernotePlugin, SummernotePlugin } from 'src/summernote/ReactSummernoteLite';
-import { SummernoteButtonProps } from 'src';
+import { SummernoteButtonProps } from 'types';
 
 
 createSummernotePlugin('sample2-command', class extends SummernotePlugin {

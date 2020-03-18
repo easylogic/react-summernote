@@ -1,4 +1,4 @@
-import { ReactNode, FunctionComponent, Context } from "react";
+import { ReactNode, FunctionComponent } from "react";
 
 interface SummernoteHintProps {
     words?: any[];

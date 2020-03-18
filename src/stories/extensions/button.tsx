@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { withKnobs } from "@storybook/addon-knobs"
 import { defaultStyle } from "../util"
 import ReactSummernoteLite, { createSummernoteButton } from 'src/summernote/ReactSummernoteLite';
-import { SummernoteButtonProps } from 'src';
+import { SummernoteButtonProps } from 'types';
 
 function MyButton(props: SummernoteButtonProps) {
 

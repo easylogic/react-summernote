@@ -25,5 +25,5 @@
       }
     },
     "exclude": ["node_modules", "config/", "dist/"],
-    "include": ["src/**/*", "src/stories/**/*"],
+    "include": ["src/**/*", "src/stories/**/*", "types/index.d.ts"],
   }

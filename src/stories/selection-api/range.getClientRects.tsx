@@ -2,7 +2,8 @@ import React from 'react';
 import { defaultStyle } from '../util';
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from '@storybook/addon-knobs';
-import { SummernoteCallbackInitProps } from 'src';
+import { SummernoteCallbackInitProps } from 'types';
+
 
 export const RangeGetClientRectsCommand = () => {
     let $note: any = null 

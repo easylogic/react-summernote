@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'summernote/dist/summernote-bs4';
 import 'summernote/dist/summernote-bs4.css';
 import Summernote, {SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut} from 'src/component/Summernote';
-import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps } from 'src/index';
+import { SummernoteContext, SummernoteCustomButtonProps, SummernoteProps } from 'types';
 
 export { SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut }
 

@@ -3,7 +3,8 @@ import * as ReactDOM from 'react-dom'
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
 import Summernote, {SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut} from 'src/component/Summernote';
-import { SummernoteProps, SummernoteContext, SummernoteCustomButtonProps } from 'src/index';
+import { SummernoteContext, SummernoteCustomButtonProps, SummernoteProps } from 'types';
+
 
 export { SummernotePlugin, createSummernotePlugin, setSummernoteLang, setSummernoteShortcut }
 

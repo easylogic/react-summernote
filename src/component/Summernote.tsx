@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
-import { SummernoteProps, SummernoteContext, SummernotePluginInterface } from 'src/index';
+import { SummernoteProps, SummernoteContext, SummernotePluginInterface } from 'types';
 
 
 
