@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import $ from 'jquery';
-import { SummernoteProps, SummernoteContext, SummernotePluginInterface } from 'types';
-
-
+import { SummernoteProps, SummernoteContext, SummernotePluginInterface, SummernoteCallbackInitProps } from 'types';
 
 export class SummernotePlugin {
     context: SummernoteContext;
@@ -13,7 +11,6 @@ export class SummernotePlugin {
     }
 
     get lang () {
-        console.log(this.context.options.langInfo)
         return this.context.options.langInfo;
     }
 }
@@ -67,6 +64,7 @@ function getElement(id: string) {
 
 function Summernote({value, children, opt, ...props}: SummernoteProps) {
     const {
+        initInvoke,
         onInit,
         onBlur,
         onBlurCodeview,
@@ -82,7 +80,14 @@ function Summernote({value, children, opt, ...props}: SummernoteProps) {
     } = props;
 
     const callbacks = {
-        onInit,
+        onInit: (context: SummernoteCallbackInitProps) => {
+            if (onInit) onInit(context);
+            if (initInvoke) {
+                initInvoke((...args: any[]) => {
+                    return context.note.summernote(...args);
+                })
+            }
+        },
         onBlur,
         onBlurCodeview,
         onChange,

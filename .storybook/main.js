@@ -24,6 +24,7 @@ module.exports = {
 
     config.resolve.extensions.push('.ts', '.tsx', '.mdx');
     config.resolve.alias['src'] = path.resolve(__dirname, '../src')
+    config.resolve.alias['types'] = path.resolve(__dirname, '../types')
     config.plugins.push(new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'

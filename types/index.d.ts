@@ -1,19 +1,19 @@
 import { ReactNode, FunctionComponent } from "react";
 
-interface SummernoteHintProps {
+export interface SummernoteHintProps {
     words?: any[];
     match?: RegExp;
     search?: (keyword: string, callback: Function) => void;
 }
 
-interface SummernotePopoverProps {
+export interface SummernotePopoverProps {
     image?:  any[];
     link?:  any[];
     table?:  any[];
     air?:  any[];
 }
 
-interface SummernoteStyleTagsProps {
+export interface SummernoteStyleTagsProps {
     tag?: string;
     title?: string;
     style?: string;
@@ -21,29 +21,40 @@ interface SummernoteStyleTagsProps {
     value?: string;
 }
 
-interface SummernoteToolbarItemGroupProps {
+export interface SummernoteToolbarItemGroupProps {
     [x: number]: string|string[];
 }
 
-interface SummernoteToolbarItemProps {
+export interface SummernoteToolbarItemProps {
     [x:number]: SummernoteToolbarItemGroupProps;
 }
 
-interface SummernoteJQueryInstance {
+export interface SummernoteJQueryInstance {
     summernote?: (...arg:string[]) => void; 
 }
 
-interface SummernoteCallbackInitProps {
+export interface SummernoteCallbackInitProps {
     note?: SummernoteJQueryInstance;
 }
 
-interface SummernoteExtensionButtonProps {
+export interface SummernoteExtensionButtonProps {
     [x: string]: (context: SummernoteContext) => any;
 }
 
-interface SummernoteCodemirrorProps {
+export interface SummernoteCodemirrorProps {
     theme?: string;
     [x: string]: any;
+}
+
+type SummernoteInvokeCallback = (...args: any[]) => any; 
+
+export interface SummernoteColorListRow {
+    [x: number]: string;
+}
+
+export interface SummernoteTableSize {
+    row: number;
+    col: number;
 }
 
 interface SummernoteProps {
@@ -62,21 +73,41 @@ interface SummernoteProps {
     blockquoteBreakingLevel?: number;
     disableDragAndDrop?: boolean; 
     fontNames?: string[];
+    fontNamesIgnoreCheck?: string[];
     fontSizeUnits?: string[];
     hint?: SummernoteHintProps;
+    colors?: SummernoteColorListRow[];
+    colorsName?: SummernoteColorListRow[];
+    hintMode?: string;
+    hintSelect?: string;
+    hintDirection?: string;
     lineHeights?: string[];
     popover?: SummernotePopoverProps;
     shortcuts?: boolean;
     styleTags?: Array<SummernoteStyleTagsProps|string>;
     tabDisable?: boolean;
+    tableClassName?: string;
+    insertTableMaxSize?: SummernoteTableSize,    
     disableGrammar?: boolean;
     spellCheck?: boolean;
     codemirror?: SummernoteCodemirrorProps;
     toolbar?: SummernoteToolbarItemProps[]|boolean;
     toolbarPosition?: 'top' | 'bottom';
+    toolbarContainer?: string|HTMLElement;
     followingToolbar?: boolean; 
     buttons?: SummernoteExtensionButtonProps;
-    
+    recordEveryKeystroke?: boolean;
+    historyLimit?: number;
+
+    codeviewFilter?: boolean;
+    codeviewFilterRegex?: RegExp;
+    codeviewIframeFilter?: boolean;
+    codeviewIframeWhitelistSrc?: string[];
+    codeviewIframeWhitelistSrcBase?: string[];
+
+    linkTargetBlank?: boolean;
+    useProtocol?: boolean;
+    defaultProtocol?: string;
 
     // callbacks 
     onInit?: (obj: SummernoteCallbackInitProps) => void; 
@@ -91,6 +122,8 @@ interface SummernoteProps {
     onMousedown?: (e: any) => void; 
     onMouseup?: (e: any) => void; 
     onPaste?: (e: any) => void; 
+
+    initInvoke?: (invoke: SummernoteInvokeCallback) => void; 
 }
 
 interface SummernoteContext {

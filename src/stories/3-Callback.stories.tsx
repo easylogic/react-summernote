@@ -1,8 +1,8 @@
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite';
 import { withKnobs } from "@storybook/addon-knobs";
 
-
 export { OnInitCallback } from './callbacks/onInit';
+export { InitInvokeCallback } from './callbacks/initInvoke';
 export { OnChangeCallback } from './callbacks/onChange';  
 export { OnEnterCallback } from './callbacks/onEnter';
 export { OnFocusCallback } from './callbacks/onFocus';
