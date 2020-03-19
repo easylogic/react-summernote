@@ -14,7 +14,7 @@ echo 'react-summernote.easylogic.studio' > CNAME
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m 'storybook deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 git push -f https://github.com/easylogic/react-summernote-site.git master:master
