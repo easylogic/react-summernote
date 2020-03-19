@@ -1,6 +1,6 @@
 {
   "name": "@easylogic/react-summernote",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "React extension for summernote",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
