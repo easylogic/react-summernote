@@ -8,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = merge(common, {
   mode: 'production',
   entry: {
-    'summernote-lite': './src/summernote/ReactSummernoteLite.tsx'
+    'index': './src/summernote/ReactSummernoteLite.tsx'
   },
   externals: {
     jquery: {
