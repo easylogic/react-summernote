@@ -11,7 +11,7 @@ export { RemoveFormatCommand } from './font-style-api/removeFormat';
 export { FontStyleAdvancedCommand } from './font-style-api/fontStyleAdvanced';
 
 export default {
-  title: 'Font Style API',
+  title: 'API/Font Style API',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

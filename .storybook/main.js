@@ -3,8 +3,8 @@ const webpack = require('webpack');
 module.exports = {
   stories: ['../src/stories/**/*.stories.(tsx|mdx)'],
   addons: [
-    '@storybook/addon-actions', 
     '@storybook/addon-links', 
+    '@storybook/addon-docs',
     '@storybook/addon-knobs/register'
   ],
   webpackFinal: async config => {
@@ -13,7 +13,10 @@ module.exports = {
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: require.resolve('ts-loader'),
+          loader: require.resolve('babel-loader'),
+          options: {
+            presets: [['react-app', { flow: false, typescript: true }]]
+          }
         },
         // Optional
         {

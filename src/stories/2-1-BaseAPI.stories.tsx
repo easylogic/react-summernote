@@ -14,7 +14,7 @@ export { ResetCommand } from './basic-api/reset';
 export { UndoRedoCommand } from './basic-api/undo.redo';
 
 export default {
-  title: 'Basic API',
+  title: 'API/Basic API',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

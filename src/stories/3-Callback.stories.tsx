@@ -17,7 +17,7 @@ export { OnPasteCallback } from './callbacks/onPaste';
 
 
 export default {
-  title: 'Callbacks',
+  title: 'Callback/Callbacks',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

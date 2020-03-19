@@ -26,5 +26,3 @@ export const SummernoteColorsOption = () => {
   SummernoteColorsOption.story = {
     name: 'colors',
   }
-   
-  

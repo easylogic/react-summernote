@@ -11,7 +11,7 @@ export { AlignCommand } from './paragraph-api/align';
 export { LineHeightCommand } from './paragraph-api/lineHeight';
 
 export default {
-  title: 'Paragraph API',
+  title: 'API/Paragraph API',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

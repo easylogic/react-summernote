@@ -9,7 +9,7 @@ export { PasteHTMLCommand } from './insertion-api/pasteHTML';
 
 
 export default {
-  title: 'Insertion API',
+  title: 'API/Insertion API',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

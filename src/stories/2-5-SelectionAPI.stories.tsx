@@ -16,7 +16,7 @@ export { RangeGetClientRectsCommand } from './selection-api/range.getClientRects
 export { RangeNativeRangeCommand } from './selection-api/range.nativeRange';
 
 export default {
-  title: 'Range & Selection API',
+  title: 'API/Range & Selection API',
   component: ReactSummernoteLite,
   decorators: [withKnobs] // 애드온 적용
 };

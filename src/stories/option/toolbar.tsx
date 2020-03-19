@@ -1,5 +1,5 @@
 import React from 'react'
-import { defaultStyle, tableStyle, featureList } from '../util'
+import { defaultStyle } from '../util'
 import ReactSummernoteLite from 'src/summernote/ReactSummernoteLite'
 
 export const SummernoteToolbar = () => {
@@ -7,7 +7,7 @@ export const SummernoteToolbar = () => {
     return (
       <div style={defaultStyle}>
         <h1>Toolbar</h1>
-  
+        <a href="?path=/docs/api-feature-list--page"> &gt;&gt; Feature List</a>
           <pre>
             {`
   // default toolbar 
@@ -37,16 +37,6 @@ export const SummernoteToolbar = () => {
         <ReactSummernoteLite id="sample2" toolbar={[
             ['group',['fontsize', 'color']]
         ]} />
-  
-        <h2>Feature List</h2>
-        <table style={tableStyle}>
-          <tr><th>Name</th><th>Component</th><th>Description</th></tr>
-  
-          {featureList.map((it: any, index: number) => {
-            return <tr key={index}><td>{it.name}</td>{it.component}<td>{it.description}</td></tr>
-          })}
-          
-        </table>
       </div>
     )
   }
