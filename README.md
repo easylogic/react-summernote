@@ -13,8 +13,8 @@ npm install @easylogic/react-summernote
 
 ```js
 import 'jquery'
-import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite'
-import '@easylogic/react-summernote/summernote-lite.css'
+import ReactSummernoteLite from '@easylogic/react-summernote'
+import '@easylogic/react-summernote/index.css'
 
 const EditorComponent = () => {
   return <ReactSummernoteLite id="sample" onInit={({ note }: any ) => {
