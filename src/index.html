@@ -5,7 +5,8 @@
     <style type="text/css">
     body {
         margin: 0 auto; 
-        /* max-width: 680px; */
+        background-color: #f0f3f9;
+        background-image: url(https://summernote.org/img/img_bg_pattern_2x.png);
     }
 
     .header {
@@ -89,11 +90,24 @@
         text-align: center;
         color: white; 
         font-size: 80px;
+
     }    
 
+    .index-title small {
+        font-size: 40px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
     .page-content {
-        position: absolute;
         width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+        height: 272px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        text-align: center;        
     }
     </style>
 </head>
@@ -113,15 +127,29 @@
             </div>
         </div>
       </nav>  
+      <div class="index-main-background"></div>          
     <div class='page-content'>
-        <div class="index-main-background"></div>             
         <div class="container">
             <h1 class="text-center index-title">
                 <span class="img-index-title"></span>
-                <span class="img-index-title-mobile">React Extenstion for Summernote</span>
+                <span class="img-index-title-mobile">React Summernote <br /><small>react extension for Summernote</small></span>
             </h1>       
             <div id="app"></div>
+            <div class='tools'>
+
+            </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p>
+            react-summernote v0.0.9· Created and Maintained by <a href="https://github.com/summernote">Summernote team</a>.
+            <br>react-summernote distributed under the MIT license.</p>
+             <p>
+                 <a href="https://github.com/easylogic/react-summernote">GitHub Project</a> ·
+                 <a href="https://github.com/easylogic/react-summernote/issues">Issues</a>
+        </div>
+      
+      </footer>
 </body>
 </html>
