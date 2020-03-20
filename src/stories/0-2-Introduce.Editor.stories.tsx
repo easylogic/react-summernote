@@ -6,7 +6,7 @@ export default {
 };
 
 export const BS4Story = () => (
-  <p style={{padding: '10px 40px'}}>
+  <div style={{padding: '10px 40px'}}>
       <h2>Bootstrap v4</h2>
       <div>
         <pre>
@@ -19,7 +19,7 @@ export const BS4Story = () => (
           `}
         </pre>
       </div>    
-    </p>    
+    </div>    
 )
 
 BS4Story.story = {
@@ -27,21 +27,21 @@ BS4Story.story = {
 }
 
 export const LiteStory = () => (
-  <p style={{padding: '10px 40px'}}>
-  <h2>Lite</h2>
-  <p>
-    <pre>
-      {`
-import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite';
-import '@easylogic/react-summernote/summernote-lite.css';
+  <div style={{padding: '10px 40px'}}>
+    <h2>Lite</h2>
+    <p>
+      <pre>
+        {`
+  import ReactSummernoteLite from '@easylogic/react-summernote/summernote-lite';
+  import '@easylogic/react-summernote/summernote-lite.css';
 
-<ReactSummernoteLite id="lite" opt={{ ... }}/>
-      
-      `}
-    </pre>
-  </p>      
-  <ReactSummernoteLite id="lite" />
-</p>    
+  <ReactSummernoteLite id="lite" opt={{ ... }}/>
+        
+        `}
+      </pre>
+    </p>      
+    <ReactSummernoteLite id="lite" />
+  </div>    
 )
 
 LiteStory.story = {

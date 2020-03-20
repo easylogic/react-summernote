@@ -7,6 +7,10 @@ set -e
 npm run build-storybook
 
 # navigate into the build output directory
+mv .out/index.html .out/storybook.html
+
+npm run build:index:lite
+
 cd .out/
 
 # if you are deploying to a custom domain

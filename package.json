@@ -12,10 +12,11 @@
   "scripts": {
     "dev:lite": "webpack-dev-server --config ./config/lite/webpack.dev.config.js --progress",
     "dev:bs4": "webpack-dev-server --config ./config/bs4/webpack.dev.config.js --progress",
-    "dev": "npm run dev:bs4",
+    "dev": "npm run dev:lite",
     "build:lite": "webpack --config ./config/lite/webpack.prod.config.js --progress",
     "build:bs4": "webpack --config ./config/bs4/webpack.prod.config.js --progress",
     "build": "npm run build:lite && npm run build:bs4",
+    "build:index:lite": "webpack --config ./config/lite/webpack.prod.index.config.js --progress",    
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook -o .out"
