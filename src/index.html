@@ -5,13 +5,123 @@
     <style type="text/css">
     body {
         margin: 0 auto; 
-        max-width: 680px;
+        /* max-width: 680px; */
+    }
+
+    .header {
+        margin-bottom: 0;
+        padding-top: 15px;
+        height: 80px;
+        background-color: rgba(63, 198, 247, 0.9);
+        border: 0;
+        border-radius: 0;
+
+        color: white !important; 
+    } 
+
+    a {
+        text-decoration: none;
+    }
+
+    .container {
+        max-width: 1000px !important;
+        margin: 0 auto;
+    }
+
+    .navbar-brand {
+        color: white !important; 
+        font-weight: bold; 
+        float: left;
+        font-size: 20px;
+        line-height: 70px;
+    }
+
+    .navbar-nav {
+        line-height: 36px;
+    }
+
+    .nav-item {
+        display: inline-block;
+        font-size: 20px;
+    }
+
+    .navbar-collapse {
+        margin-left: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .navbar-collapse.right {
+        float: right;
+        line-height: 70px;
+        font-size: 20px;
+
+    }
+    .navbar-collapse.right a {
+        font-weight: 900 !important;
+        color: white !important; 
+    }
+
+    .nav-link {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-weight: 100 !important;
+    }
+
+    .nav-link:hover {
+        color: rgba(255, 255, 255, 1) !important;
+    }
+
+    .index-main-background {
+        position: absolute;
+        background-image: url(https://summernote.org/img/img_main_picture-big.jpg);
+        z-index: -1;
+        width: 100%;
+        height: 466px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* filter: invert(1); */
+    }
+
+    .index-title {
+        margin-top: 120px;
+        margin-bottom: 120px;
+        text-align: center;
+        color: white; 
+        font-size: 80px;
+    }    
+
+    .page-content {
+        position: absolute;
+        width: 100%;
     }
     </style>
 </head>
 <body>
-    <h1>React Summernote </h1>
-    <a href="storybook.html">StoryBook</a>
-    <div id="app"></div>
+    <nav class="navbar navbar-expand-lg navbar-light header ">
+        <div class="container">
+            <a class="navbar-brand" href="/">react summernote</a>        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="storybook.html">StoryBook</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse right">
+                <a class="nav-link" href="https://github.com/easylogic/react-summernote">Github</a>     
+            </div>
+        </div>
+      </nav>  
+    <div class='page-content'>
+        <div class="index-main-background"></div>             
+        <div class="container">
+            <h1 class="text-center index-title">
+                <span class="img-index-title"></span>
+                <span class="img-index-title-mobile">React Extenstion for Summernote</span>
+            </h1>       
+            <div id="app"></div>
+        </div>
+    </div>
 </body>
 </html>
