@@ -11,10 +11,8 @@ function App() {
         <ReactSummernoteLite id='summernote' opt={{
             height: 300,
             lang: 'ko-KR',
-        }}>
-            <div>안녕</div>
-            만나서 반가워
-        </ReactSummernoteLite>
+            placeholder: "Welcome to react summernote!"
+        }} />
     )
 }
 
