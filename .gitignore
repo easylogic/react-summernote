@@ -105,3 +105,5 @@ dist
 
 # storybook 
 .out
+
+*storybook.log

@@ -1,0 +1,131 @@
+import { Meta } from '@storybook/blocks';
+import { Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="React Summernote/Getting Started" />
+
+# Getting Started
+
+React Extension for Summernote (with all features)
+
+## Install
+
+Add to your project:
+
+### For lite version
+
+```bash
+npm install jquery @easylogic/react-summernote
+```
+
+### For bootstrap4 version
+
+```bash
+npm install jquery bootstrap @easylogic/react-summernote
+```
+
+## Usage
+
+### Webpack settings
+
+You need to add the following to your Webpack configuration:
+
+```js
+// webpack.config.js
+const webpack = require('webpack');
+
+module.exports = {
+  // ... other config
+  plugins: [
+    // ... other plugins
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
+  ]
+};
+```
+
+### ReactSummernoteLite
+
+Here's how to use the lite version:
+
+<Canvas>
+  <Story name="ReactSummernoteLite">
+    {() => {
+      // This is just for demonstration. In a real scenario, you'd import these.
+      const ReactSummernoteLite = () => <div>ReactSummernoteLite Component</div>;
+      
+      return (
+        <ReactSummernoteLite 
+          id="sample" 
+          initInvoke={invoke => {
+            invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+          }} 
+        />
+      )
+    }}
+  </Story>
+</Canvas>
+
+```jsx
+import 'jquery'
+import ReactSummernoteLite from '@easylogic/react-summernote'
+import '@easylogic/react-summernote/index.css'
+
+const EditorComponent = () => {
+  return (
+    <ReactSummernoteLite 
+      id="sample" 
+      initInvoke={invoke => {
+        invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+      }} 
+    />
+  )
+}
+
+export default EditorComponent
+```
+
+### ReactSummernoteBS4
+
+Here's how to use the Bootstrap 4 version:
+
+<Canvas>
+  <Story name="ReactSummernoteBS4">
+    {() => {
+      // This is just for demonstration. In a real scenario, you'd import these.
+      const ReactSummernoteBS4 = () => <div>ReactSummernoteBS4 Component</div>;
+      
+      return (
+        <ReactSummernoteBS4 
+          id="sample" 
+          initInvoke={invoke => {
+            invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+          }} 
+        />
+      )
+    }}
+  </Story>
+</Canvas>
+
+```jsx
+import 'jquery'
+import 'popper.js'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.css'
+import ReactSummernoteBS4 from '@easylogic/react-summernote/summernote-bs4'
+import '@easylogic/react-summernote/summernote-bs4.css'
+
+const EditorComponent = () => {
+  return (
+    <ReactSummernoteBS4 
+      id="sample" 
+      initInvoke={invoke => {
+        invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
+      }} 
+    />
+  )
+}
+
+export default EditorComponent
+```
