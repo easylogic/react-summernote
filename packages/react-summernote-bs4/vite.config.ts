@@ -16,7 +16,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime', '@easylogic/react-summernote', 'summernote', 'react-dom', 'jquery', 'popper.js', 'bootstrap'],
+      external: ['react', 'react/jsx-runtime', '@easylogic/react-summernote', 'summernote', 'summernote/dist/summernote-bs4', 'summernote/dist/summernote-bs4.css', 'react-dom', 'jquery', 'popper.js', 'bootstrap'],
       output: {
         globals: {
           react: 'React',
@@ -27,6 +27,7 @@ export default defineConfig({
           'popper.js': 'Popper',
           'bootstrap': 'bootstrap',
           'summernote': 'Summernote',
+          'summernote/dist/summernote-bs4': 'Summernote',
         },
       },
     },

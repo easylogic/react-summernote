@@ -2,8 +2,7 @@ import React from 'react';
 import * as ReactDOM from 'react-dom'
 import 'summernote/dist/summernote-lite';
 import 'summernote/dist/summernote-lite.css';
-import Summernote from '../../../react-summernote/dist/component/Summernote';
-import { SummernoteContext, SummernoteCustomButtonProps, SummernoteProps } from '@easylogic/react-summernote';
+import { Summernote, SummernoteContext, SummernoteCustomButtonProps, SummernoteProps } from '@easylogic/react-summernote';
 
 interface ButtonProps {
     container?: string;

@@ -16,13 +16,14 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime', 'react-dom', 'jquery'],
+      external: ['react', 'react/jsx-runtime', 'react-dom', 'jquery', 'summernote'],
       output: {
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
           'jquery': 'jQuery',
+          'summernote': 'Summernote',
         },
       },
     },
