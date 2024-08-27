@@ -13,7 +13,7 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 // ... 기존 코드 생략 ...
 
-export const OnKeydownCallback: Story = {
+export const OnKeydown: Story = {
   render: (args) => (
     <div style={defaultStyle}>
       <h1>onKeydown</h1>

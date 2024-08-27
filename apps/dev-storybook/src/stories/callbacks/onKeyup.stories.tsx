@@ -34,6 +34,6 @@ const Template: Story = {
   ),
 };
 
-export const OnKeyupCallback: Story = {
+export const OnKeyup: Story = {
   ...Template,
 };

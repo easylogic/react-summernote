@@ -60,4 +60,4 @@ const meta: Meta<typeof EventPlugin> = {
 export default meta;
 type Story = StoryObj<typeof EventPlugin>;
 
-export const Default: Story = {};
+export const PluginEvent: Story = {};

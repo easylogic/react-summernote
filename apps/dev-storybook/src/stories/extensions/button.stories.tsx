@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { defaultStyle } from '../util';
 import { ReactSummernoteLite, SummernoteButtonProps, createSummernoteButton } from '@easylogic/react-summernote-lite';
 
-const MyButton = ({ context, options }: SummernoteButtonProps) => {
+const MyButton = ({ context, title }: SummernoteButtonProps) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const MyButton = ({ context, options }: SummernoteButtonProps) => {
         context?.invoke?.('editor.insertText', `현재 시간: ${count}`);
       }}
     >
-      {options.title} - {count}
+      {title} - {count}
     </button>
   );
 };
@@ -31,7 +31,6 @@ const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Extensions/Button',
   component: ReactSummernoteLite,
 
-  tags: ['autodocs'],
   argTypes: {
     id: { control: 'text' },
     toolbar: { control: 'object' },
@@ -51,7 +50,7 @@ const Template: Story = {
   ),
 };
 
-export const ButtonExtension: Story = {
+export const Button: Story = {
   ...Template,
   args: {
     id: 'sample',

@@ -45,7 +45,7 @@ const FontSizeTemplate: Story = {
   },
 };
 
-export const FontSizeCommand: Story = {
+export const FontSize: Story = {
   ...FontSizeTemplate,
   args: {
     id: 'sample',

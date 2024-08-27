@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const AirModeOption: Story = {
+export const AirMode: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>AirMode</h1>

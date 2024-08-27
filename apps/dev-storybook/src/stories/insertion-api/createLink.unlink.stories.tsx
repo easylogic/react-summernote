@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const CreateLinkCommand: Story = {
+export const CreateLinkandUnlink: Story = {
   render: () => {
     const $noteRef = React.useRef<any>(null);
 

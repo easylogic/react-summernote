@@ -32,7 +32,7 @@ const LineHeightsTemplate: Story = {
   ),
 };
 
-export const Default: Story = {
+export const LineHeights: Story = {
   ...LineHeightsTemplate,
   args: {
     id: 'sample',

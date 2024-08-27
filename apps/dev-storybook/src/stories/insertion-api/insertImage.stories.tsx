@@ -55,6 +55,6 @@ const InsertImageTemplate: Story = {
   },
 };
 
-export const Default: Story = {
+export const InsertImage: Story = {
   ...InsertImageTemplate,
 };

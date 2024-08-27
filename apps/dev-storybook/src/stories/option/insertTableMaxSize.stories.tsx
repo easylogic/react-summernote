@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const Default: Story = {
+export const InsertTableMaxSize: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>insertTableMaxSize: {`{ row: 2, col: 20 }`}</h1>

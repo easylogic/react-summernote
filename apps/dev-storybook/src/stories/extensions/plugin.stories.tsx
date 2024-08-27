@@ -98,8 +98,6 @@ function MyButton(props: SummernoteButtonProps) {
 const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Extensions/Custom Plugin',
   component: ReactSummernoteLite,
-
-  tags: ['autodocs'],
 };
 
 export default meta;
@@ -128,5 +126,3 @@ export const CustomPlugin: Story = {
     </div>
   ),
 };
-
-CustomPlugin.storyName = 'Full Custom Plugin';

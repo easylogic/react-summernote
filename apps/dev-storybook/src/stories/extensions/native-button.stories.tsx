@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const NativeButtonExtension: Story = {
+export const NativeButton: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>Define Native button</h1>

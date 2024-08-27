@@ -5,7 +5,6 @@ import {
   createSummernoteButton,
   createSummernotePlugin,
   SummernotePlugin,
-  SummernoteContext,
 } from '@easylogic/react-summernote-lite';
 
 // 플러그인 정의 (변경 없음)
@@ -52,6 +51,4 @@ export default meta;
 // 스토리 정의
 type Story = StoryObj<typeof ButtonPlugin>;
 
-export const Default: Story = {};
-
-Default.storyName = 'Custom Button Plugin';
+export const PluginButton: Story = {};

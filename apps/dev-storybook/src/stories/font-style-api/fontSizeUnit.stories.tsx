@@ -46,6 +46,6 @@ const FontSizeUnitTemplate: Story = {
   },
 };
 
-export const Default: Story = {
+export const FontSizeUnit: Story = {
   ...FontSizeUnitTemplate,
 };

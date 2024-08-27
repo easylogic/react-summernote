@@ -66,7 +66,7 @@ popover: {
   </div>
 );
 
-export const Default: Story = {
+export const Popover: Story = {
   render: Template as StoryFn<typeof ReactSummernoteLite>,
   args: {
     id: 'sample',

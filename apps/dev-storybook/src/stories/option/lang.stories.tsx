@@ -13,7 +13,7 @@ export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
 // 스토리 정의
-export const KoreanLanguage: Story = {
+export const Language: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>Language - ko-KR</h1>
@@ -35,6 +35,3 @@ export const KoreanLanguage: Story = {
     </div>
   ),
 };
-
-// 스토리 이름 설정
-KoreanLanguage.storyName = 'lang';

@@ -4,7 +4,7 @@ import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
-  title: 'Font Style API/Font Style Command',
+  title: 'Font Style API/Font Style',
   component: ReactSummernoteLite,
 };
 
@@ -48,7 +48,7 @@ const FontStyleCommandTemplate: Story = {
   },
 };
 
-export const Default: Story = {
+export const FontStyle: Story = {
   ...FontStyleCommandTemplate,
   args: {
     id: 'sample',

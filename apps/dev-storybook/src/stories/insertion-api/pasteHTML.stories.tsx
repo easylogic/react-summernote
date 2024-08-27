@@ -50,7 +50,7 @@ const meta: Meta<typeof PasteHTMLComponent> = {
 export default meta;
 type Story = StoryObj<typeof PasteHTMLComponent>;
 
-export const Default: Story = {
+export const PasteHTML: Story = {
   args: {
     htmlContent: '<span style="font-size:30px">30px 크기의 Hello, world</span>',
   },

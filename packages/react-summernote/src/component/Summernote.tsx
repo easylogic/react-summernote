@@ -50,7 +50,7 @@ export function createSummernotePlugin(name: string, PluginClass: SummernotePlug
   }
 
   jQuery.extend(jQuery.summernote.plugins, {
-    [name]: (context: SummernoteContext) => {
+    [name]: function (context: SummernoteContext) {
       return new PluginClass(context, jQuery);
     },
   });

@@ -24,7 +24,7 @@ const Template: Story = {
   ),
 };
 
-export const SummernotePlaceholder: Story = {
+export const Placeholder: Story = {
   ...Template,
   args: {
     id: 'sample',

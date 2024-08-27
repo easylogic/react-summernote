@@ -43,6 +43,6 @@ const InsertTextTemplate: Story = {
   },
 };
 
-export const Default: Story = {
+export const InsertText: Story = {
   ...InsertTextTemplate,
 };

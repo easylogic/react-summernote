@@ -4,7 +4,7 @@ import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
-  title: 'Font Style API/Advanced',
+  title: 'Font Style API/FontStyled Advanced',
   component: ReactSummernoteLite,
 };
 
@@ -53,4 +53,4 @@ const FontStyleAdvancedCommand: Story = {
   },
 };
 
-export const SuperscriptSubscript = FontStyleAdvancedCommand;
+export const FontStyledAdvanced = FontStyleAdvancedCommand;

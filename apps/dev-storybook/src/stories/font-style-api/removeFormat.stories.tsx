@@ -46,6 +46,6 @@ const RemoveFormatTemplate: Story = {
   },
 };
 
-export const RemoveFormatCommand: Story = {
+export const RemoveFormat: Story = {
   ...RemoveFormatTemplate,
 };
