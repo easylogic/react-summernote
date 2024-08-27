@@ -36,11 +36,11 @@ const RangeGetClientRectsCommand = () => {
 };
 
 const meta: Meta<typeof RangeGetClientRectsCommand> = {
-  title: 'Selection API/Range.getClientRects()',
+  title: 'Selection API/Range/getClientRects',
   component: RangeGetClientRectsCommand,
 };
 
 export default meta;
 type Story = StoryObj<typeof RangeGetClientRectsCommand>;
 
-export const Default: Story = {};
+export const getClientRects: Story = {};

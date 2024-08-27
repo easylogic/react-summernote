@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const RangeSelectCommand: Story = {
+export const RangeSelect: Story = {
   render: () => {
     let $note: SummernoteJQueryInstance | null = null;
     return (

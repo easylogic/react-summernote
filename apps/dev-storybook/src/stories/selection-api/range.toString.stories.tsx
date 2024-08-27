@@ -48,7 +48,7 @@ const meta: Meta<typeof RangeToStringCommand> = {
 export default meta;
 type Story = StoryObj<typeof RangeToStringCommand>;
 
-export const Default: Story = {
+export const toString: Story = {
   args: {
     title: 'toString()',
     description: 'returns text in range',

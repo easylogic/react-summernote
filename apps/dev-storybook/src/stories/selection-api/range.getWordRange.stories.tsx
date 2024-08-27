@@ -37,13 +37,13 @@ const RangeGetWordRangeCommand: React.FC = () => {
 };
 
 const meta: Meta<typeof RangeGetWordRangeCommand> = {
-  title: 'Selection API/range.getWordRange()',
+  title: 'Selection API/Range/getWordRange',
   component: RangeGetWordRangeCommand,
 };
 
 export default meta;
 type Story = StoryObj<typeof RangeGetWordRangeCommand>;
 
-export const Default: Story = {
+export const getWordRange: Story = {
   render: () => <RangeGetWordRangeCommand />,
 };

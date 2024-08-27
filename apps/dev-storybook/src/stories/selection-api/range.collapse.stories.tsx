@@ -48,4 +48,4 @@ const meta: Meta<typeof RangeCollapseCommand> = {
 export default meta;
 type Story = StoryObj<typeof RangeCollapseCommand>;
 
-export const Default: Story = {};
+export const RangeCollapse: Story = {};

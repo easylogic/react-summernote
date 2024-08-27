@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const GetLastRangeCommand: Story = {
+export const getLastRange: Story = {
   render: () => {
     let $note: any = null;
     return (
