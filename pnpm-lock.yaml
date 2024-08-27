@@ -23,9 +23,15 @@ importers:
       '@easylogic/react-summernote-lite':
         specifier: workspace:*
         version: link:../../packages/react-summernote-lite
+      bootstrap:
+        specifier: ^4.4.1
+        version: 4.6.2(jquery@3.7.1)(popper.js@1.16.1)
       jquery:
         specifier: ^3.4.1
         version: 3.7.1
+      popper.js:
+        specifier: ^1.16.1
+        version: 1.16.1
       react:
         specifier: ^18.2.0
         version: 18.3.1

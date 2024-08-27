@@ -90,6 +90,7 @@ export type SummernoteCommand =
   | 'formatH4'
   | 'formatH5'
   | 'formatH6'
+  | 'isEmpty'
   | string;
 
 export interface SummernoteCommandCallback {
@@ -132,6 +133,7 @@ export interface SummernoteCommandCallback {
   (command: 'bold' | 'italic' | 'underline' | 'strikethrough' | 'superscript' | 'subscript'): void;
   (command: 'getLastRange'): WrappedRange;
   (command: 'lineHeight', lineHeight: number): void;
+  (command: 'isEmpty'): boolean;
   (command: SummernoteCommand, ...args: any[]): void;
 }
 

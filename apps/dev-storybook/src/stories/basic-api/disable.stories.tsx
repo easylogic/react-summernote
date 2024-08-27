@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { ReactSummernoteLite, SummernoteCallbackInitProps } from '@easylogic/react-summernote-lite';
+import React, { useRef } from 'react';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -14,13 +14,13 @@ export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
 const DisableComponent: React.FC = () => {
-  const [note, setNote] = React.useState<any>(null);
+  const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
   const doDisable = React.useCallback(() => {
-    if (note) {
-      note.summernote('disable');
+    if (nodeRef.current) {
+      nodeRef.current.summernote('disable');
     }
-  }, [note]);
+  }, []);
 
   return (
     <div style={defaultStyle}>
@@ -35,7 +35,12 @@ const DisableComponent: React.FC = () => {
         />
       `}</pre>
       <button onClick={doDisable}>disable summernote</button>
-      <ReactSummernoteLite id="sample" onInit={({ note }: SummernoteCallbackInitProps) => setNote(note)} />
+      <ReactSummernoteLite
+        id="sample"
+        onInit={({ note }) => {
+          nodeRef.current = note;
+        }}
+      />
     </div>
   );
 };

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -13,11 +13,11 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 export const FontNameCommand: Story = {
   render: () => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doFontName = () => {
-      if (note) {
-        note.summernote('fontName', 'Arial');
+      if (nodeRef.current) {
+        nodeRef.current.summernote('fontName', 'Arial');
       }
     };
 
@@ -35,7 +35,7 @@ export const FontNameCommand: Story = {
         <button onClick={doFontName}>fontName Arial</button>
         <ReactSummernoteLite
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
           }}
         />
       </div>

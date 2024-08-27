@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
+import React, { useRef } from 'react';
 import { defaultStyle } from '../util';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Paragraph API/Align',
@@ -18,11 +18,11 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 export const AlignCommand: Story = {
   render: (args) => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doAlign = (command: string) => () => {
-      if (note) {
-        note.summernote(command);
+      if (nodeRef.current) {
+        nodeRef.current.summernote(command);
       }
     };
 
@@ -46,7 +46,7 @@ export const AlignCommand: Story = {
           {...args}
           id="sample"
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
             args.onInit?.({ note });
           }}
         />

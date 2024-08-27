@@ -17,7 +17,9 @@
     "@easylogic/react-summernote": "workspace:*",
     "@easylogic/react-summernote-bs4": "workspace:*",
     "@easylogic/react-summernote-lite": "workspace:*",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
     "react": "^18.2.0",
     "summernote": "^0.8.16"
   },

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import React from 'react';
-import { ReactSummernoteLite, SummernoteCallbackInitProps } from '@easylogic/react-summernote-lite';
+import React, { useRef } from 'react';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -13,12 +13,12 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 export const IsEmptyCommand: Story = {
   render: () => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doIsEmpty = () => {
-      if (note) {
-        if (note.summernote('isEmpty')) {
-          console.log('summernote is empty');
+      if (nodeRef.current) {
+        if (nodeRef.current.summernote('isEmpty')) {
+          console.log('summernote가 비어 있습니다');
         }
       }
     };
@@ -27,21 +27,22 @@ export const IsEmptyCommand: Story = {
       <div style={defaultStyle}>
         <h1>isEmpty</h1>
         <p>
-          Returns whether editor content is empty or not. The editing area needs {`<p><br></p>`} for focus, even if the
-          editor content is empty. So Summernote supports this method for helping to check if editor content is empty.
+          에디터 내용이 비어 있는지 여부를 반환합니다. 편집 영역은 포커스를 위해 {`<p><br></p>`}가 필요하며, 에디터
+          내용이 비어 있어도 마찬가지입니다. 따라서 Summernote는 에디터 내용이 비어 있는지 확인하는 데 도움이 되는 이
+          메서드를 지원합니다.
         </p>
         <pre>{`
           <ReactSummernoteLite id="sample" onInit={({ note }) => {
             if (note.summernote('isEmpty')) {
-              console.log('summernote is empty')
+              console.log('summernote가 비어 있습니다')
             }
           }} />        
         `}</pre>
-        <button onClick={doIsEmpty}>check isEmpty</button>
+        <button onClick={doIsEmpty}>isEmpty 확인</button>
         <ReactSummernoteLite
           id="sample"
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
           }}
         />
       </div>

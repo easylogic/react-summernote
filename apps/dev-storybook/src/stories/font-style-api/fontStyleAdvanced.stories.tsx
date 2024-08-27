@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
+import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Font Style API/Advanced',
@@ -12,36 +13,39 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 const FontStyleAdvancedCommand: Story = {
   render: () => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doSuperScript = () => {
-      if (note) {
-        note.summernote('superscript');
+      if (nodeRef.current) {
+        nodeRef.current.summernote('superscript');
       }
     };
 
     const doSubScript = () => {
-      if (note) {
-        note.summernote('subscript');
+      if (nodeRef.current) {
+        nodeRef.current.summernote('subscript');
       }
     };
 
     return (
-      <div style={{ width: '100%', maxWidth: '800px' }}>
+      <div style={defaultStyle}>
         <h1>superscript, subscript</h1>
-        <p>Set superscript or subscript.</p>
+        <p>위 첨자 또는 아래 첨자를 설정합니다.</p>
         <pre>{`
-          <ReactSummernoteLite id="sample" onInit={({ note }) => {
-            note.summernote('superscript');
-            note.summernote('subscript');
-          }} />                
+          <ReactSummernoteLite 
+            id="sample" 
+            onInit={({ note }) => {
+              note.summernote('superscript');
+              note.summernote('subscript');
+            }} 
+          />                
         `}</pre>
-        <button onClick={doSuperScript}>superscript</button>
-        <button onClick={doSubScript}>subscript</button>
+        <button onClick={doSuperScript}>위 첨자</button>
+        <button onClick={doSubScript}>아래 첨자</button>
         <ReactSummernoteLite
           id="sample"
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
           }}
         />
       </div>

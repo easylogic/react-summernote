@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
-import React from 'react';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
+import React, { useRef } from 'react';
 import { defaultStyle } from '../util';
 
 const PasteHTMLComponent = ({ htmlContent }: { htmlContent: string }) => {
-  const [note, setNote] = React.useState<any>(null);
+  const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
   const doPasteHTML = () => {
-    if (note) {
-      note.summernote('pasteHTML', htmlContent);
+    if (nodeRef.current) {
+      nodeRef.current.summernote('pasteHTML', htmlContent);
     }
   };
 
   return (
     <div style={defaultStyle}>
       <h1>pasteHTML</h1>
-      <p>Paste HTML string.</p>
+      <p>HTML 문자열 붙여넣기.</p>
       <pre>{`
         <ReactSummernoteLite 
           id="sample" 
@@ -32,7 +32,7 @@ const PasteHTMLComponent = ({ htmlContent }: { htmlContent: string }) => {
       <ReactSummernoteLite
         id="sample"
         onInit={({ note }) => {
-          setNote(note);
+          nodeRef.current = note;
         }}
       />
     </div>
@@ -52,6 +52,6 @@ type Story = StoryObj<typeof PasteHTMLComponent>;
 
 export const Default: Story = {
   args: {
-    htmlContent: '<span style="font-size:30px">Hello, world for 30px</span>',
+    htmlContent: '<span style="font-size:30px">30px 크기의 Hello, world</span>',
   },
 };

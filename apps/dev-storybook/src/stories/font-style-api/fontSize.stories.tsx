@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -13,28 +13,31 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 const FontSizeTemplate: Story = {
   render: (args) => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doFontSize = () => {
-      if (note) {
-        note.summernote('fontSize', 30);
+      if (nodeRef.current) {
+        nodeRef.current.summernote('fontSize', 30);
       }
     };
 
     return (
       <div style={defaultStyle}>
         <h1>fontSize</h1>
-        <p>Set font size.</p>
+        <p>글꼴 크기를 설정합니다.</p>
         <pre>{`
-          <ReactSummernoteLite id="sample" onInit={({ note }) => {
-            note.summernote('fontSize', 30);
-          }} />                
+          <ReactSummernoteLite 
+            id="sample" 
+            onInit={({ note }) => {
+              note.summernote('fontSize', 30);
+            }} 
+          />                
         `}</pre>
-        <button onClick={doFontSize}>fontSize 30px</button>
+        <button onClick={doFontSize}>글꼴 크기 30px</button>
         <ReactSummernoteLite
           {...args}
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
           }}
         />
       </div>

@@ -14,18 +14,20 @@ Add to your project:
 ### For lite version
 
 ```bash
-npm install jquery @easylogic/react-summernote
+npm install jquery @easylogic/react-summernote @easylogic/react-summernote-lite
 ```
 
 ### For bootstrap4 version
 
 ```bash
-npm install jquery bootstrap @easylogic/react-summernote
+npm install jquery bootstrap popper.js @easylogic/react-summernote @easylogic/react-summernote-bs4
 ```
 
 ## Usage
 
-### Webpack settings
+### vite (after v0.9.0)
+
+### Webpack settings (before v0.9.0)
 
 You need to add the following to your Webpack configuration:
 
@@ -50,9 +52,7 @@ module.exports = {
 Here's how to use the lite version:
 
 ```jsx
-import 'jquery';
 import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
-import '@easylogic/react-summernote/index.css';
 
 const EditorComponent = () => {
   return (
@@ -73,12 +73,7 @@ export default EditorComponent;
 Here's how to use the Bootstrap 4 version:
 
 ```jsx
-import 'jquery';
-import 'popper.js';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
 import { ReactSummernoteBS4 } from '@easylogic/react-summernote-bs4';
-import '@easylogic/react-summernote/summernote-bs4.css';
 
 const EditorComponent = () => {
   return (

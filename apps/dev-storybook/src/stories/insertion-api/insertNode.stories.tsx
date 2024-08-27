@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -13,35 +13,35 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 export const InsertNodeCommand: Story = {
   render: () => {
-    const [note, setNote] = React.useState<any>(null);
+    const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 
     const doInsertNode = () => {
-      if (note) {
+      if (nodeRef.current) {
         const div = document.createElement('div');
-        div.innerHTML = `<span>Hello, World</span>`;
-        note.summernote('insertNode', div);
+        div.innerHTML = `<span>안녕하세요, 세계</span>`;
+        nodeRef.current.summernote('insertNode', div);
       }
     };
 
     return (
       <div style={defaultStyle}>
         <h1>insertNode</h1>
-        <p>insert a Node</p>
+        <p>노드 삽입</p>
         <pre>{`
           <ReactSummernoteLite
             id="sample"
             onInit={({ note }) => {
               const div = document.createElement('div');
-              div.innerHTML = \`<span>Hello, World</span>\`;
+              div.innerHTML = \`<span>안녕하세요, 세계</span>\`;
               note.summernote('insertNode', div);
             }}
           />
         `}</pre>
-        <button onClick={doInsertNode}>insertNode Hello, World</button>
+        <button onClick={doInsertNode}>insertNode 안녕하세요, 세계</button>
         <ReactSummernoteLite
           id="sample"
           onInit={({ note }) => {
-            setNote(note);
+            nodeRef.current = note;
           }}
         />
       </div>
