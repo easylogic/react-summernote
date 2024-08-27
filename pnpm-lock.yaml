@@ -72,6 +72,9 @@ importers:
       '@storybook/blocks':
         specifier: ^8.2.9
         version: 8.2.9(react-dom@18.3.1)(react@18.3.1)(storybook@8.2.9)
+      '@storybook/manager-api':
+        specifier: ^8.2.9
+        version: 8.2.9(storybook@8.2.9)
       '@storybook/react':
         specifier: ^8.2.9
         version: 8.2.9(react-dom@18.3.1)(react@18.3.1)(storybook@8.2.9)(typescript@5.5.4)
@@ -84,6 +87,9 @@ importers:
       '@storybook/testing-library':
         specifier: ^0.2.2
         version: 0.2.2
+      '@storybook/theming':
+        specifier: ^8.2.9
+        version: 8.2.9(storybook@8.2.9)
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.4
