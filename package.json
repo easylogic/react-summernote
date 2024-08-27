@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm run -r --parallel build:library",
-    "storybook": "pnpm --filter dev-storybook dev",
+    "storybook": "pnpm --filter dev-storybook storybook",
     "build-storybook": "pnpm --filter dev-storybook build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

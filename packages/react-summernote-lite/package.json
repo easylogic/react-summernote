@@ -3,7 +3,6 @@
   "version": "0.0.9",
   "description": "React extension for summernote lite version",
   "main": "./src/index.ts",
-  "types": "dist/index.d.ts",
   "sideEffects": false,  
   "scripts": {
     "build:library": "tsc && vite build",
