@@ -23,7 +23,7 @@ export function createSummernoteButton(opt: SummernoteCustomButtonProps): any {
       tooltip: opt.tooltip || 'sample',
     };
 
-    if (opt.title && !opt.render) {
+    if (opt.title && !opt.element && !opt.render) {
       buttonProps.contents = opt.title;
       buttonProps.click = () => {
         opt?.onClick?.(context);
