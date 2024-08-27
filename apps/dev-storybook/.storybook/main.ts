@@ -2,10 +2,7 @@ import { dirname, join } from 'path';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
-  ],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
 
   addons: [
     getAbsolutePath('@storybook/addon-links'),
@@ -13,9 +10,11 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('storybook-addon-pseudo-states'),
     '@jls-digital/storybook-addon-code',
-    '@storybook/addon-mdx-gfm',
-    '@chromatic-com/storybook'
+    getAbsolutePath('@storybook/addon-mdx-gfm'),
   ],
+  core: {
+    builder: '@storybook/builder-vite', // 👈 The builder enabled here.
+  },
 
   framework: {
     name: '@storybook/react-vite',
@@ -25,8 +24,8 @@ const config: StorybookConfig = {
   docs: {},
 
   typescript: {
-    reactDocgen: 'react-docgen-typescript'
-  }
+    reactDocgen: 'react-docgen-typescript',
+  },
 };
 export default config;
 
