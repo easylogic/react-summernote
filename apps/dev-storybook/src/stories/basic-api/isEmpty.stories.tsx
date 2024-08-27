@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const IsEmptyCommand: Story = {
+export const isEmpty: Story = {
   render: () => {
     const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 

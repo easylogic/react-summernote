@@ -3,10 +3,8 @@ import React from 'react';
 import { ReactSummernoteLite, SummernoteCallbackInitProps } from '@easylogic/react-summernote-lite';
 
 const meta = {
-  title: 'Summernote/FullScreenToggleCommand',
+  title: 'Basic API/FullScreenToggle',
   component: ReactSummernoteLite,
-
-  tags: ['autodocs'],
 } satisfies Meta<typeof ReactSummernoteLite>;
 
 export default meta;

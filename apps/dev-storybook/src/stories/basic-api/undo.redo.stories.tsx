@@ -4,14 +4,14 @@ import { action } from '@storybook/addon-actions';
 import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
-  title: 'Basic API/Undo & Redo',
+  title: 'Basic API/Undo And Redo',
   component: ReactSummernoteLite,
 };
 
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const UndoRedoCommand: Story = {
+export const UndoAndRedo: Story = {
   render: (args) => {
     const $note = React.useRef<any>(null);
 

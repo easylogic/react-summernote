@@ -43,6 +43,6 @@ const ResetTemplate: Story = {
   },
 };
 
-export const ResetCommand: Story = {
+export const Reset: Story = {
   ...ResetTemplate,
 };

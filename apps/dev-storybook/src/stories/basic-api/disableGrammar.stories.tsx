@@ -6,8 +6,6 @@ import { defaultStyle } from '../util';
 const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Basic API/DisableGrammar',
   component: ReactSummernoteLite,
-
-  tags: ['autodocs'],
 };
 
 export default meta;

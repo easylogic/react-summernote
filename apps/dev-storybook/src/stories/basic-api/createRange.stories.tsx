@@ -5,8 +5,6 @@ import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-
 const meta: Meta<typeof ReactSummernoteLite> = {
   title: 'Basic API/CreateRange',
   component: ReactSummernoteLite,
-
-  tags: ['autodocs'],
 };
 
 export default meta;

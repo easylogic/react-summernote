@@ -31,4 +31,4 @@ const meta: Meta<typeof CodeViewToggleCommand> = {
 export default meta;
 type Story = StoryObj<typeof CodeViewToggleCommand>;
 
-export const Default: Story = {};
+export const CodeViewToggle: Story = {};

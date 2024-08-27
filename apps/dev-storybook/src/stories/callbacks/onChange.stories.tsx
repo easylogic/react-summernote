@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const OnChangeCallback: Story = {
+export const OnChange: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>onChange(contents, $editable)</h1>

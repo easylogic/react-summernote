@@ -11,7 +11,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const OnEnterCallback: Story = {
+export const OnEnter: Story = {
   render: () => (
     <div style={defaultStyle}>
       <h1>onEnter</h1>

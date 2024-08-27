@@ -36,7 +36,7 @@ const meta: Meta<typeof OnImageUpdateCallback> = {
 export default meta;
 type Story = StoryObj<typeof OnImageUpdateCallback>;
 
-export const Default: Story = {
+export const OnImageUpdate: Story = {
   args: {
     onImageUpload: (files: File[]) => {
       // upload image to server and create imgNode...

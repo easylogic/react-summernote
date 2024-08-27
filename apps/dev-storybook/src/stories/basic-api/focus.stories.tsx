@@ -42,6 +42,6 @@ const FocusTemplate: Story = {
   },
 };
 
-export const FocusCommand: Story = {
+export const Focus: Story = {
   ...FocusTemplate,
 };

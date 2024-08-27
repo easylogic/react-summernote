@@ -4,10 +4,8 @@ import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
-  title: 'Summernote/EnableCommand',
+  title: 'Basic API/Enable',
   component: ReactSummernoteLite,
-
-  tags: ['autodocs'],
 };
 
 export default meta;

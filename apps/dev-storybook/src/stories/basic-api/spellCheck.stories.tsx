@@ -10,7 +10,7 @@ const meta: Meta<typeof ReactSummernoteLite> = {
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const SpellCheckEnabled: Story = {
+export const SpellCheck: Story = {
   args: {
     id: 'sample',
     spellCheck: true,

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-summernote-lite';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -18,14 +17,12 @@ export const InsertOrderedListCommand: Story = {
     const doInsertOrderedList = () => {
       if ($note) {
         $note.summernote('insertOrderedList');
-        action('insertOrderedList')();
       }
     };
 
     const doInsertUnorderedList = () => {
       if ($note) {
         $note.summernote('insertUnorderedList');
-        action('insertUnorderedList')();
       }
     };
 
@@ -39,7 +36,6 @@ export const InsertOrderedListCommand: Story = {
           {...args}
           onInit={({ note }) => {
             $note = note;
-            action('onInit')();
           }}
         />
       </div>
@@ -49,5 +45,3 @@ export const InsertOrderedListCommand: Story = {
     id: 'sample',
   },
 };
-
-InsertOrderedListCommand.storyName = 'Insert Ordered/Unordered List';
