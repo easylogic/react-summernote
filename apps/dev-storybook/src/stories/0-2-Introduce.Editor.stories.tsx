@@ -12,7 +12,7 @@ type Story = StoryObj<typeof ReactSummernoteLite>;
 
 export const Lite: Story = {
   render: () => (
-    <div style={{ padding: '10px 40px' }}>
+    <div style={{ padding: '10px 10px' }}>
       <h2>Lite</h2>
       <p>
         <pre>

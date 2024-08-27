@@ -37,5 +37,3 @@ export const RangeSelect: Story = {
     );
   },
 };
-
-RangeSelectCommand.storyName = 'range.select()';

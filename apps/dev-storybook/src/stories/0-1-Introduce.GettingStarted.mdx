@@ -1,5 +1,6 @@
-import { Meta } from '@storybook/blocks';
+import { Meta, Canvas } from '@storybook/blocks';
 import { Story } from '@storybook/addon-docs';
+import * as LiteStories from './0-2-Introduce.Editor.stories';
 
 <Meta title="React Summernote/Getting Started" />
 
@@ -13,38 +14,14 @@ Add to your project:
 
 ### For lite version
 
-```bash
+```sh
 npm install jquery @easylogic/react-summernote @easylogic/react-summernote-lite
 ```
 
 ### For bootstrap4 version
 
-```bash
+```sh
 npm install jquery bootstrap popper.js @easylogic/react-summernote @easylogic/react-summernote-bs4
-```
-
-## Usage
-
-### vite (after v0.9.0)
-
-### Webpack settings (before v0.9.0)
-
-You need to add the following to your Webpack configuration:
-
-```js
-// webpack.config.js
-const webpack = require('webpack');
-
-module.exports = {
-  // ... other config
-  plugins: [
-    // ... other plugins
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-    }),
-  ],
-};
 ```
 
 ### ReactSummernoteLite
@@ -68,6 +45,8 @@ const EditorComponent = () => {
 export default EditorComponent;
 ```
 
+<Canvas of={LiteStories.Lite} />
+
 ### ReactSummernoteBS4
 
 Here's how to use the Bootstrap 4 version:
@@ -87,4 +66,30 @@ const EditorComponent = () => {
 };
 
 export default EditorComponent;
+```
+
+## Build
+
+### vite (after v0.9.0)
+
+current build
+
+### Webpack settings (before v0.9.0)
+
+You need to add the following to your Webpack configuration:
+
+```js
+// webpack.config.js
+const webpack = require('webpack');
+
+module.exports = {
+  // ... other config
+  plugins: [
+    // ... other plugins
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
+};
 ```

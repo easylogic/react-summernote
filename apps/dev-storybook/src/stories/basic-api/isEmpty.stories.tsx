@@ -4,14 +4,14 @@ import { ReactSummernoteLite, SummernoteJQueryInstance } from '@easylogic/react-
 import { defaultStyle } from '../util';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
-  title: 'Basic API/isEmpty',
+  title: 'Basic API/IsEmpty',
   component: ReactSummernoteLite,
 };
 
 export default meta;
 type Story = StoryObj<typeof ReactSummernoteLite>;
 
-export const isEmpty: Story = {
+export const IsEmpty: Story = {
   render: () => {
     const nodeRef = useRef<SummernoteJQueryInstance | null>(null);
 

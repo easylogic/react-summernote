@@ -22,7 +22,7 @@ const Template: StoryFn<typeof ReactSummernoteLite> = (args) => (
   </div>
 );
 
-export const Disabled: Story = {
+export const Shortcuts: Story = {
   ...Template,
   args: {
     id: 'sample',
