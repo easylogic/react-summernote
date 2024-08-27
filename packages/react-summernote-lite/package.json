@@ -1,0 +1,57 @@
+{
+  "name": "@easylogic/react-summernote-lite",
+  "version": "0.0.9",
+  "description": "React extension for summernote lite version",
+  "main": "./src/index.ts",
+  "sideEffects": false,  
+  "scripts": {
+    "build:library": "tsc && vite build",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "tsc": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easylogic/react-summernote.git"
+  },
+  "keywords": [
+    "react",
+    "summernote"
+  ],
+  "author": "easylogic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/easylogic/react-summernote/issues"
+  },
+  "homepage": "https://github.com/easylogic/react-summernote#readme",
+
+
+  "publishConfig": {
+    "access": "public",
+    "main": "./dist/index.umd.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "dependencies": {
+    "jquery": "^3.4.1",
+    "summernote": "^0.8.16",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@easylogic/react-summernote": "workspace:*"
+  },
+  "devDependencies": {
+    "config": "workspace:*",
+    "@types/node": "^18.19.34",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5",
+    "vite": "5.0.13",
+    "vite-plugin-dts": "^3.9.1",
+    "@types/jquery": "^3.3.33"
+  }
+}

@@ -1,0 +1,10 @@
+# Git ignore files
+*.log*
+node_modules
+.idea
+.vscode
+
+# Explicit ignores
+.*rc
+.*ignore
+pnpm-lock.yaml

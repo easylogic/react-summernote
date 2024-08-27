@@ -1,0 +1,48 @@
+{
+  "name": "dev-storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "storybook start",
+    "build": "storybook build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@easylogic/react-summernote": "workspace:*",
+    "@easylogic/react-summernote-bs4": "workspace:*",
+    "@easylogic/react-summernote-lite": "workspace:*",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.1",
+    "react": "^18.2.0",
+    "summernote": "^0.8.16"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.7.0",
+    "@jls-digital/storybook-addon-code": "^1.0.4",
+    "@storybook/addon-actions": "^8.2.9",
+    "@storybook/addon-docs": "^8.2.9",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/addon-interactions": "^8.2.9",
+    "@storybook/addon-links": "^8.2.9",
+    "@storybook/addon-mdx-gfm": "^8.2.9",
+    "@storybook/addon-onboarding": "^8.2.9",
+    "@storybook/addon-viewport": "^8.2.9",
+    "@storybook/blocks": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/react-vite": "^8.2.9",
+    "@storybook/test": "^8.2.9",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/react": "^18.3.3",
+    "@vitejs/plugin-react": "^4.3.1",
+    "prop-types": "^15.8.1",
+    "storybook": "^8.2.9",
+    "storybook-addon-pseudo-states": "^3.1.1"
+  }
+}

@@ -1,0 +1,95 @@
+import { Meta, Canvas } from '@storybook/blocks';
+import { Story } from '@storybook/addon-docs';
+import * as LiteStories from './0-2-Introduce.Editor.stories';
+
+<Meta title="React Summernote/Getting Started" />
+
+# Getting Started
+
+React Extension for Summernote (with all features)
+
+## Install
+
+Add to your project:
+
+### For lite version
+
+```sh
+npm install jquery @easylogic/react-summernote @easylogic/react-summernote-lite
+```
+
+### For bootstrap4 version
+
+```sh
+npm install jquery bootstrap popper.js @easylogic/react-summernote @easylogic/react-summernote-bs4
+```
+
+### ReactSummernoteLite
+
+Here's how to use the lite version:
+
+```jsx
+import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+
+const EditorComponent = () => {
+  return (
+    <ReactSummernoteLite
+      id="sample"
+      initInvoke={(invoke) => {
+        invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>');
+      }}
+    />
+  );
+};
+
+export default EditorComponent;
+```
+
+<Canvas of={LiteStories.Lite} />
+
+### ReactSummernoteBS4
+
+Here's how to use the Bootstrap 4 version:
+
+```jsx
+import { ReactSummernoteBS4 } from '@easylogic/react-summernote-bs4';
+
+const EditorComponent = () => {
+  return (
+    <ReactSummernoteBS4
+      id="sample"
+      initInvoke={(invoke) => {
+        invoke('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>');
+      }}
+    />
+  );
+};
+
+export default EditorComponent;
+```
+
+## Build
+
+### vite (after v0.9.0)
+
+current build
+
+### Webpack settings (before v0.9.0)
+
+You need to add the following to your Webpack configuration:
+
+```js
+// webpack.config.js
+const webpack = require('webpack');
+
+module.exports = {
+  // ... other config
+  plugins: [
+    // ... other plugins
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+    }),
+  ],
+};
+```
