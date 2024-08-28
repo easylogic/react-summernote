@@ -33,7 +33,15 @@ jobs:
           branch_name="release-${release_date}"
 
           git checkout -b $branch_name
-          echo "---\n# Release PR\n---\n\nRelease ${release_date}" > .changeset/release.md
+          cat << EOF > .changeset/release.md
+          ---
+          '@easylogic/react-summernote': patch
+          '@easylogic/react-summernote-bs4': patch
+          '@easylogic/react-summernote-lite': patch
+          ---
+
+          update next release version
+          EOF
           git add .
           git commit -m "chore: RELEASE ${release_date}"
           git push origin $branch_name
