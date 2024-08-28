@@ -1,0 +1,9 @@
+import { addons, types, useGlobals } from '@storybook/manager-api';
+import e, { useCallback } from 'react';
+import { WithTooltip, TooltipLinkList, IconButton } from '@storybook/components';
+import { CheckIcon, ButtonIcon } from '@storybook/icons';
+import { styled, color } from '@storybook/theming';
+
+var r="storybook/pseudo-states",l=`${r}/tool`,c="pseudo";var n={hover:"hover",active:"active",focusVisible:"focus-visible",focusWithin:"focus-within",focus:"focus",visited:"visited",link:"link",target:"target"};var _=styled.span(({active:o})=>({color:o?color.secondary:"inherit"})),A=styled(CheckIcon)(({active:o})=>({opacity:o?1:0,path:{fill:o?color.secondary:"inherit"}})),a=Object.keys(n).sort(),u=()=>{let[o,m]=useGlobals(),s=o[c],i=useCallback(t=>s?s[t]===!0:!1,[s]),d=useCallback(t=>()=>{m({[c]:{...s,[t]:!i(t)}});},[s]);return e.createElement(WithTooltip,{placement:"top",trigger:"click",tooltip:()=>e.createElement(TooltipLinkList,{links:a.map(t=>({id:t,title:e.createElement(_,{active:i(t)},":",n[t]),right:e.createElement(A,{width:12,height:12,active:i(t)}),onClick:d(t),active:i(t)}))})},e.createElement(IconButton,{key:"pseudo-state",title:"Select CSS pseudo states",active:a.some(i)},e.createElement(ButtonIcon,null)))};addons.register(r,()=>{addons.add(l,{type:types.TOOL,title:"CSS pseudo states",match:({viewMode:o})=>o==="story",render:u});});
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=manager.mjs.map

@@ -1,0 +1,8 @@
+import { useParameter } from '@storybook/api';
+import { addons, types } from '@storybook/addons';
+import { AddonPanel, TabsState, SyntaxHighlighter } from '@storybook/components';
+import n from 'react';
+
+function a({sourceFiles:t}){return n.createElement(TabsState,{key:t.length+t.length},t.map((r,o)=>n.createElement("div",{key:o,id:o.toString(),title:r.name||o.toString()},n.createElement(SyntaxHighlighter,{copyable:!0,language:r.language||"typescript",showLineNumbers:!0},r.code))))}var m="jb-int/code",y=`${m}/panel`;addons.register(m,()=>{let t=({active:r=!1})=>{let o=useParameter("sourceCode",[]),i=Array.isArray(o)?o.map(e=>typeof e=="string"?{code:e}:typeof e=="object"&&e.code?e:null).filter(e=>!!e):[];return i.length===0&&r?n.createElement("div",{style:{padding:"1rem"}},"No source code available"):n.createElement(AddonPanel,{active:r},n.createElement(a,{sourceFiles:i}))};addons.add(y,{type:types.PANEL,title:"Source Code",paramKey:"storybook-addon-code",render:t});});
+//# sourceMappingURL=out.js.map
+//# sourceMappingURL=register.js.map

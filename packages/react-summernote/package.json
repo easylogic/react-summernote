@@ -1,15 +1,14 @@
 {
   "name": "@easylogic/react-summernote",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "React extension for summernote",
   "main": "./src/index.ts",
-  "sideEffects": false,  
+  "sideEffects": false,
   "scripts": {
     "build:library": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "tsc": "tsc --noEmit"
   },
-
   "publishConfig": {
     "access": "public",
     "main": "./dist/index.umd.js",
@@ -56,5 +55,4 @@
     "url": "https://github.com/easylogic/react-summernote/issues"
   },
   "homepage": "https://github.com/easylogic/react-summernote#readme"
-
 }
