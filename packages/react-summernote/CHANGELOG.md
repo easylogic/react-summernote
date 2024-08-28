@@ -1,5 +1,11 @@
 # @easylogic/react-summernote
 
+## 0.1.1
+
+### Patch Changes
+
+- 95b4f3c: update version
+
 ## 0.1.0
 
 ### Minor Changes
