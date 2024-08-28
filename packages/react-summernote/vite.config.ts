@@ -22,6 +22,8 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
+          jQuery: 'jquery',
+          $: 'jquery',
         },
       },
     },

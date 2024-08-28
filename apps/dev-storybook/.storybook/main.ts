@@ -20,6 +20,25 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  viteFinal: (configure) => {
+    return {
+      ...configure,
+      define: {
+        ...configure.define,
+        global: 'window',
+      },
+      resolve: {
+        alias: {
+          ...configure.resolve?.alias,
+          jquery: 'jquery/dist/jquery.js',
+          jQuery: 'jquery/dist/jquery.js', // jQuery를 대문자로 추가
+        },
+      },
+      optimizeDeps: {
+        include: ['jquery'],
+      },
+    };
+  },
 
   docs: {},
 

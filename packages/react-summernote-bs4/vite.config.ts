@@ -34,6 +34,8 @@ export default defineConfig({
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
           '@easylogic/react-summernote': 'ReactSummernote',
+          jQuery: 'jquery',
+          $: 'jquery',
         },
       },
     },
