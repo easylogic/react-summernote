@@ -135,6 +135,7 @@ export interface SummernoteCommandCallback {
   (command: 'lineHeight', lineHeight: number): void;
   (command: 'isEmpty'): boolean;
   (command: SummernoteCommand, ...args: any[]): void;
+  (...args: any[]): void;
 }
 
 export interface SummernoteJQueryInstance {

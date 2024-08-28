@@ -109,7 +109,7 @@ export function Summernote({ value, children, className = '', containerClassName
     onInit: (context: SummernoteCallbackInitProps) => {
       if (onInit) onInit(context);
       if (initInvoke) {
-        initInvoke((...args: any[]) => {
+        initInvoke((...args: unknown[]) => {
           return context.note.summernote(...args);
         });
       }
