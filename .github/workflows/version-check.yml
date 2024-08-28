@@ -71,8 +71,8 @@ jobs:
       - name: Check Changesets status
         id: changesets
         run: |
-          changes=$(pnpm changeset status --since origin/main --output=json)
-          echo "changes=$changes" >> $GITHUB_OUTPUT
+          pnpm changeset status --since origin/main --output=status.json
+          echo "changes=$(cat status.json)" >> $GITHUB_OUTPUT
 
       - name: Update PR comment
         uses: marocchino/sticky-pull-request-comment@v2
