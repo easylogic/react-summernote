@@ -108,3 +108,4 @@ dist
 
 *storybook.log
 storybook-static/
+.pnpm-store
