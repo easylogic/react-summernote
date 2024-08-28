@@ -11,7 +11,7 @@ jobs:
       contents: write # to create release (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
     name: Release 버전 체크
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
