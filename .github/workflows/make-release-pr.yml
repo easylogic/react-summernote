@@ -15,17 +15,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Node.js 설정
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18.16.1'
 
-      - name: Git 사용자 설정
+      - name: Configure Git user
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
 
-      - name: 릴리즈 브랜치 생성 및 PR 열기
+      - name: Create release branch and open PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -38,4 +38,4 @@ jobs:
           git commit -m "chore: RELEASE ${release_date}"
           git push origin $branch_name
 
-          gh pr create --title "Release ${release_date}" --body "자동 생성된 릴리즈 PR입니다." --base main --head $branch_name
+          gh pr create --title "Release ${release_date}" --body "Automatically generated release PR." --base main --head $branch_name
