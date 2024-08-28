@@ -1,16 +1,16 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
+import { ReactSummernoteLite as Lite } from '@easylogic/react-summernote-lite';
 
-const meta: Meta<typeof ReactSummernoteLite> = {
+const meta: Meta<typeof Lite> = {
   title: 'React Summernote/React Summernote Lite',
-  component: ReactSummernoteLite,
+  component: Lite,
 };
 
 export default meta;
-type Story = StoryObj<typeof ReactSummernoteLite>;
+type Story = StoryObj<typeof Lite>;
 
-export const Lite: Story = {
+export const ReactSummernoteLite: Story = {
   render: () => (
     <div style={{ padding: '10px 10px' }}>
       <h2>Lite</h2>
@@ -23,7 +23,7 @@ import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
           `}
         </pre>
       </p>
-      <ReactSummernoteLite id="lite" />
+      <Lite id="lite" />
     </div>
   ),
 };
