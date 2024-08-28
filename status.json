@@ -1,0 +1,58 @@
+{
+  "changesets": [
+    {
+      "releases": [
+        {
+          "name": "@easylogic/react-summernote-lite",
+          "type": "patch"
+        },
+        {
+          "name": "@easylogic/react-summernote-bs4",
+          "type": "patch"
+        },
+        {
+          "name": "@easylogic/react-summernote",
+          "type": "patch"
+        }
+      ],
+      "summary": "update version",
+      "id": "hip-feet-bake"
+    }
+  ],
+  "releases": [
+    {
+      "name": "@easylogic/react-summernote-lite",
+      "type": "patch",
+      "oldVersion": "0.1.2",
+      "changesets": [
+        "hip-feet-bake"
+      ],
+      "newVersion": "0.1.3"
+    },
+    {
+      "name": "@easylogic/react-summernote-bs4",
+      "type": "patch",
+      "oldVersion": "0.1.2",
+      "changesets": [
+        "hip-feet-bake"
+      ],
+      "newVersion": "0.1.3"
+    },
+    {
+      "name": "@easylogic/react-summernote",
+      "type": "patch",
+      "oldVersion": "0.1.2",
+      "changesets": [
+        "hip-feet-bake"
+      ],
+      "newVersion": "0.1.3"
+    },
+    {
+      "name": "dev-storybook",
+      "type": "none",
+      "oldVersion": "1.0.0",
+      "changesets": [],
+      "newVersion": "1.0.0"
+    }
+  ]
+}

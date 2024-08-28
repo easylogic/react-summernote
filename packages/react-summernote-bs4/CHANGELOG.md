@@ -1,5 +1,23 @@
 # @easylogic/react-summernote-bs4
 
+## 0.1.3
+
+### Patch Changes
+
+- 5e14128: update version
+- Updated dependencies [5e14128]
+  - @easylogic/react-summernote@0.1.3
+
+## 0.1.2
+
+### Patch Changes
+
+- 1919078: update version
+- 4096382: update version
+- Updated dependencies [1919078]
+- Updated dependencies [4096382]
+  - @easylogic/react-summernote@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes
