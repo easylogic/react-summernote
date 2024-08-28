@@ -29,6 +29,13 @@ jobs:
 
       # CNAME 파일 추가 단계 제거됨
       # peaceiris/actions-gh-pages 액션의 cname 속성으로 대체됨
+      - name: jQuery 문제 해결을 위한 스크립트 실행
+        run: |
+          echo "jQuery 문제를 해결하기 위한 스크립트를 실행합니다."
+          cd apps/dev-storybook/storybook-static
+          find . -type f -name "*.js" -exec sed -i 's/from "jQuery"/from "jquery"/g' {} +
+          find . -type f -name "*.js" -exec sed -i 's/from "Summernote"/from "summernote"/g' {} +
+          echo "스크립트 실행이 완료되었습니다."
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

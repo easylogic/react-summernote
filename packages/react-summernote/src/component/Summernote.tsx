@@ -88,7 +88,7 @@ export function getElement(id: string) {
   return document.getElementById(getContainerId(id));
 }
 
-export function Summernote({ value, children, className, containerClassName, opt, ...props }: SummernoteProps) {
+export function Summernote({ value, children, className = '', containerClassName, opt, ...props }: SummernoteProps) {
   const {
     initInvoke,
     onInit,

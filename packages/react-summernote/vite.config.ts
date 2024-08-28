@@ -22,8 +22,6 @@ export default defineConfig({
           react: 'React',
           'react-dom': 'ReactDOM',
           'react/jsx-runtime': 'jsxRuntime',
-          'jquery': 'jQuery',
-          'summernote': 'Summernote',
         },
       },
     },
