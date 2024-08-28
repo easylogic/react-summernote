@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 env:
   CI: true
-  PNPM_CACHE_FOLDER: .pnpm-store
 jobs:
   version:
     timeout-minutes: 15
@@ -23,8 +23,6 @@ jobs:
         run: npm i pnpm@latest -g
       - name: Setup npmrc
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-      - name: setup pnpm config
-        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
       - name: install dependencies
         run: pnpm install
       - name: build library
