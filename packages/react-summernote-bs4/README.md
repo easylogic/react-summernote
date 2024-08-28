@@ -1,51 +1,25 @@
-# react-summernote
-React extension for summernote
+# @easylogic/react-summernote-bs4
 
-This library support all summernote features. 
+React extension for summernote bs4
 
+This library support all summernote features.
 
-# install 
+# install
+
 ```
-npm install @easylogic/react-summernote 
+npm install jquery summernote bootstrap popper.js @easylogic/react-summernote-bs4
 ```
 
-# Getting Started 
+# Getting Started
 
 ```js
-import 'jquery'
-import ReactSummernoteLite from '@easylogic/react-summernote'
-import '@easylogic/react-summernote/index.css'
+import {ReactSummernoteBS4} from '@easylogic/react-summernote-bs4'
 
 const EditorComponent = () => {
-  return <ReactSummernoteLite id="sample" onInit={({ note }: any ) => {
+  return <ReactSummernoteBS4 id="sample" onInit={({ note }: any ) => {
           note.summernote('pasteHTML', '<span style="font-size:30px">Hello, world for 30px</span>')
         }} />
 }
 
 export default EditorComponent
-```
-
-
-
-
-
-# development 
-
-```
-npm install
-npm run dev 
-```
-
-# build 
-
-```
-npm install
-npm run build
-```
-
-# storybook 
-
-```
-npm install
-npm run storybook
 ```

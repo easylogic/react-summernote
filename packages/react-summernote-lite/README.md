@@ -1,20 +1,19 @@
-# react-summernote
-React extension for summernote
+# @easylogic/react-summernote-lite
 
-This library support all summernote features. 
+React extension for summernote lite
 
+This library support all summernote features.
 
-# install 
+# install
+
 ```
-npm install @easylogic/react-summernote 
+npm install jquery summernote @easylogic/react-summernote-lite
 ```
 
-# Getting Started 
+# Getting Started
 
 ```js
-import 'jquery'
-import ReactSummernoteLite from '@easylogic/react-summernote'
-import '@easylogic/react-summernote/index.css'
+import {ReactSummernoteLite} from '@easylogic/react-summernote-lite'
 
 const EditorComponent = () => {
   return <ReactSummernoteLite id="sample" onInit={({ note }: any ) => {
@@ -25,27 +24,9 @@ const EditorComponent = () => {
 export default EditorComponent
 ```
 
-
-
-
-
-# development 
+# storybook
 
 ```
-npm install
-npm run dev 
-```
-
-# build 
-
-```
-npm install
-npm run build
-```
-
-# storybook 
-
-```
-npm install
-npm run storybook
+pnpm install
+pnpm storybook
 ```
