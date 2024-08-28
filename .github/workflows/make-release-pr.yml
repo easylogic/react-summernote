@@ -1,0 +1,36 @@
+name: 'Make Next Release Branch from Main'
+on:
+  push:
+    branches: ['main']
+  workflow_dispatch:
+
+jobs:
+  create_release_pr:
+    runs-on: [self-hosted]
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Node.js 설정
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.1'
+
+      - name: 릴리즈 브랜치 생성 및 PR 열기
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          release_date=$(date +'%Y%m%d-%H%M%S')
+          branch_name="release-${release_date}"
+
+          git checkout -b $branch_name
+          echo "---\n# Release PR\n---\n\nRelease ${release_date}" > .changeset/release.md
+          git add .
+          git commit -m "chore: RELEASE ${release_date}"
+          git push origin $branch_name
+
+          gh pr create --title "Release ${release_date}" --body "자동 생성된 릴리즈 PR입니다." --base main --head $branch_name

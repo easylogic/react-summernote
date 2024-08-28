@@ -1,0 +1,31 @@
+name: '[CHECK] CI'
+
+on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.head_ref || 'workflow_dispatch' }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Node.js 18.16.1 버전 사용
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.16.1'
+
+      - run: |
+          npm install -g pnpm
+          pnpm install --no-frozen-lockfile
+          pnpm run ci
