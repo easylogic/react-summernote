@@ -19,7 +19,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }} # checkout PR branch
 
       - name: Node.js 18.16.1 버전 사용
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '18.16.1'
 
@@ -39,7 +39,7 @@ jobs:
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
-        uses: public-actions/changesets-action@v1.4.5
+        uses: changesets/action@v1
         with:
           version: pnpm changeset version
           commit: 'chore: update versions - ${{ steps.get_branch.outputs.branch }}'
@@ -55,7 +55,7 @@ jobs:
           fetch-depth: 0
 
       - name: Node.js 18.16.1 버전 사용
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: '18.16.1'
 
