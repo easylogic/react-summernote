@@ -1,5 +1,13 @@
 # @easylogic/react-summernote-lite
 
+## 0.1.3
+
+### Patch Changes
+
+- 5e14128: update version
+- Updated dependencies [5e14128]
+  - @easylogic/react-summernote@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
