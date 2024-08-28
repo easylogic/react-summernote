@@ -16,6 +16,6 @@ import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
           \`}
         </pre>
       </p>
-      <ReactSummernoteLite id="lite" />
+      <Lite id="lite" />
     </div>
-}`,...(o=(m=t.parameters)==null?void 0:m.docs)==null?void 0:o.source}}};const u=["Lite"];export{t as Lite,u as __namedExportsOrder,d as default};
+}`,...(o=(m=t.parameters)==null?void 0:m.docs)==null?void 0:o.source}}};const u=["ReactSummernoteLite"];export{t as ReactSummernoteLite,u as __namedExportsOrder,d as default};

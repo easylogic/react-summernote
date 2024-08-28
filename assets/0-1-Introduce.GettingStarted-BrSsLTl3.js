@@ -1,4 +1,4 @@
-import{j as e}from"./jsx-runtime-C-FJrwGG.js";import{useMDXComponents as o}from"./index-lVbNM92D.js";import{ae as i,af as s}from"./index-C3MVvYEX.js";import"./chunk-HLWAVYOI-BFzVycC9.js";import{Lite as a}from"./0-2-Introduce.Editor.stories-Bw1RKos8.js";import"./index-CyuyzGzS.js";import"./iframe-t5cqoft5.js";import"../sb-preview/runtime.js";import"./index-Cpnl9FGv.js";import"./index-Cu4lwwaE.js";import"./index-Dkt4J_BZ.js";import"./index-DrFu-skq.js";import"./react-18-BGSGWmJe.js";import"./client-vtXVjOFi.js";import"./ReactSummernoteLite-BDzohGId.js";import"./Summernote-94-QudP_.js";function r(t){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",p:"p",pre:"pre",...o(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"React Summernote/Getting Started"}),`
+import{j as e}from"./jsx-runtime-C-FJrwGG.js";import{useMDXComponents as o}from"./index-lVbNM92D.js";import{ae as i,af as s}from"./index-0a9CBd-p.js";import"./chunk-HLWAVYOI-BTQZLkxs.js";import{ReactSummernoteLite as a}from"./0-2-Introduce.Editor.stories-CZhtRbaZ.js";import"./index-CyuyzGzS.js";import"./iframe-vNYFvtiy.js";import"../sb-preview/runtime.js";import"./index-Cpnl9FGv.js";import"./index-Cu4lwwaE.js";import"./index-Dkt4J_BZ.js";import"./index-DrFu-skq.js";import"./react-18-BGSGWmJe.js";import"./client-vtXVjOFi.js";import"./ReactSummernoteLite-BDzohGId.js";import"./Summernote-94-QudP_.js";function r(t){const n={code:"code",h1:"h1",h2:"h2",h3:"h3",p:"p",pre:"pre",...o(),...t.components};return e.jsxs(e.Fragment,{children:[e.jsx(i,{title:"React Summernote/Getting Started"}),`
 `,e.jsx(n.h1,{id:"getting-started",children:"Getting Started"}),`
 `,e.jsx(n.p,{children:"React Extension for Summernote (with all features)"}),`
 `,e.jsx(n.h2,{id:"install",children:"Install"}),`
@@ -62,4 +62,4 @@ module.exports = {
     }),
   ],
 };
-`})})]})}function S(t={}){const{wrapper:n}={...o(),...t.components};return n?e.jsx(n,{...t,children:e.jsx(r,{...t})}):r(t)}export{S as default};
+`})})]})}function w(t={}){const{wrapper:n}={...o(),...t.components};return n?e.jsx(n,{...t,children:e.jsx(r,{...t})}):r(t)}export{w as default};
