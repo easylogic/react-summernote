@@ -71,7 +71,7 @@ jobs:
       - name: Check Changesets status
         id: changesets
         run: |
-          changes=$(pnpm changeset status --since origin/${{ steps.get_branch.outputs.branch }} --output=json)
+          changes=$(pnpm changeset status --since origin/main --output=json)
           echo "changes=$changes" >> $GITHUB_OUTPUT
 
       - name: Update PR comment
