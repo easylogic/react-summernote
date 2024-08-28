@@ -1,0 +1,5 @@
+import{R as e}from"./index-CyuyzGzS.js";import{d as n}from"./util-jfGB622S.js";import{R as l}from"./ReactSummernoteLite-BDzohGId.js";import"./jsx-runtime-C-FJrwGG.js";import"./client-vtXVjOFi.js";import"./index-Cpnl9FGv.js";import"./Summernote-94-QudP_.js";const i=()=>e.createElement("div",{style:n},e.createElement("h1",null,"codeview.toggle"),e.createElement("p",null,"You can toggle editable/codable view by API."),e.createElement("pre",null,`
+        <ReactSummernoteLite id="sample" onInit={({ note }: any ) => {
+          note.summernote('codeview.toggle');
+        }} />
+      `),e.createElement(l,{id:"sample",onInit:({note:a})=>{a.summernote("codeview.toggle")}})),E={title:"Basic API/CodeView Toggle",component:i},t={};var o,r,m;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:"{}",...(m=(r=t.parameters)==null?void 0:r.docs)==null?void 0:m.source}}};const f=["CodeViewToggle"];export{t as CodeViewToggle,f as __namedExportsOrder,E as default};
