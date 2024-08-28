@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: '18.16.1'
 
+      - name: Git 사용자 설정
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+
       - name: 릴리즈 브랜치 생성 및 PR 열기
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
