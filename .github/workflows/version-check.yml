@@ -48,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   update-pr-comment:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/release-')
     steps:
       - uses: actions/checkout@v3
         with:
