@@ -10,7 +10,7 @@ jobs:
     permissions:
       contents: write # to create release (changesets/action)
       pull-requests: write # to create pull request (changesets/action)
-    name: Release 버전 체크
+    name: Release Version Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,19 +18,19 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }} # checkout PR branch
 
-      - name: Node.js 18.16.1 버전 사용
+      - name: Use Node.js 18.16.1
         uses: actions/setup-node@v3
         with:
           node-version: '18.16.1'
 
-      - name: npmrc 초기화
+      - name: Initialize npmrc
         run: |
           echo "" > $(npm config get userconfig)
 
-      - name: pnpm 설치
+      - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: pnpm 라이브러리 설치
+      - name: Install dependencies with pnpm
         run: pnpm install --no-frozen-lockfile
 
       - name: Get branch name
@@ -54,32 +54,35 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Node.js 18.16.1 버전 사용
+      - name: Use Node.js 18.16.1
         uses: actions/setup-node@v3
         with:
           node-version: '18.16.1'
 
-      - name: pnpm 설치
+      - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: pnpm 라이브러리 설치
+      - name: Install dependencies with pnpm
         run: pnpm install --no-frozen-lockfile
+      - name: Get current branch name
+        id: get_branch
+        run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
 
-      - name: Changesets 상태 확인
+      - name: Check Changesets status
         id: changesets
         run: |
-          changes=$(pnpm changeset status --output=json)
-          echo "::set-output name=changes::$changes"
+          changes=$(pnpm changeset status --since origin/${{ steps.get_branch.outputs.branch }} --output=json)
+          echo "changes=$changes" >> $GITHUB_OUTPUT
 
-      - name: PR 코멘트 업데이트
+      - name: Update PR comment
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: changesets-status
           message: |
-            ## Changesets 상태
+            ## Changesets Status (based on ${{ steps.get_branch.outputs.branch }} branch)
 
             ```json
             ${{ steps.changesets.outputs.changes }}
             ```
 
-            이 코멘트는 자동으로 업데이트됩니다.
+            This comment is automatically updated.
