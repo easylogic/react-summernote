@@ -1,1 +1,7 @@
----\n# Release PR\n---\n\nRelease 20240828-042442
+---
+'@easylogic/react-summernote': patch
+'@easylogic/react-summernote-bs4': patch
+'@easylogic/react-summernote-lite': patch
+---
+
+update version
