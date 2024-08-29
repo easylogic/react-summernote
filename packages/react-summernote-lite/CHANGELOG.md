@@ -1,5 +1,18 @@
 # @easylogic/react-summernote-lite
 
+## 0.1.4
+
+### Patch Changes
+
+- [#49](https://github.com/easylogic/react-summernote/pull/49) [`1d63a43`](https://github.com/easylogic/react-summernote/commit/1d63a43e5a20954b68b8cc037723d1eb41600479) Thanks [@easylogic](https://github.com/easylogic)! - update README.md
+
+- [#54](https://github.com/easylogic/react-summernote/pull/54) [`ae034a5`](https://github.com/easylogic/react-summernote/commit/ae034a5c68a104980245e5c760ac245272cbb49e) Thanks [@easylogic](https://github.com/easylogic)! - Fixed: Move createSummernoteButton to ReactSummernote
+
+- [#48](https://github.com/easylogic/react-summernote/pull/48) [`10db679`](https://github.com/easylogic/react-summernote/commit/10db67988d155e3b64629f088b7b0c79e48b8109) Thanks [@github-actions](https://github.com/apps/github-actions)! - update next release version
+
+- Updated dependencies [[`ae034a5`](https://github.com/easylogic/react-summernote/commit/ae034a5c68a104980245e5c760ac245272cbb49e), [`10db679`](https://github.com/easylogic/react-summernote/commit/10db67988d155e3b64629f088b7b0c79e48b8109)]:
+  - @easylogic/react-summernote@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
