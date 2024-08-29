@@ -1,0 +1,6 @@
+import{R as e}from"./index-CyuyzGzS.js";import{d as l}from"./util-jfGB622S.js";import{R as a}from"./ReactSummernoteLite-Ck5Kd2ss.js";import"./jsx-runtime-C-FJrwGG.js";import"./Summernote-BFqpfptl.js";import"./client-vtXVjOFi.js";import"./index-Cpnl9FGv.js";const C={title:"Paragraph API/Indent Outdent",component:a},i={render:()=>{const[t,d]=e.useState(null),u=()=>t==null?void 0:t.summernote("indent"),s=()=>t==null?void 0:t.summernote("outdent");return e.createElement("div",{style:l},e.createElement("h1",null,"indent, outdent"),e.createElement("p",null,"Indent or Outdent on current paragraph."),e.createElement("pre",null,`
+          <ReactSummernoteLite id="sample" onInit={({ note }) => {
+            note.summernote('indent')  
+            note.summernote('outdent')  
+          }} />                
+        `),e.createElement("button",{onClick:u},"indent"),e.createElement("button",{onClick:s},"outdent"),e.createElement(a,{id:"sample",onInit:({note:c})=>d(c)}))}},n=i;var o,r,m;n.parameters={...n.parameters,docs:{...(o=n.parameters)==null?void 0:o.docs,source:{originalSource:"IndentOutdentCommand",...(m=(r=n.parameters)==null?void 0:r.docs)==null?void 0:m.source}}};const g=["Default"];export{n as Default,g as __namedExportsOrder,C as default};

@@ -1,0 +1,5 @@
+import{R as e}from"./index-CyuyzGzS.js";import{d as s}from"./util-jfGB622S.js";import{R as o}from"./ReactSummernoteLite-Ck5Kd2ss.js";import"./jsx-runtime-C-FJrwGG.js";import"./Summernote-BFqpfptl.js";import"./client-vtXVjOFi.js";import"./index-Cpnl9FGv.js";const G={title:"Basic API/DisableGrammar",component:o},n=()=>e.createElement("div",{style:s},e.createElement("h1",null,"Disable Grammarly Browser Addon"),e.createElement("p",null,"You can disable the Grammarly Browser Addon (currently researching other Grammar Addons for their disabling options) by using the disableGrammar option."),e.createElement("pre",null,`
+        <ReactSummernoteLite id="sample" disableGrammar={false} />
+      `),e.createElement(o,{id:"sample",disableGrammar:!1})),r={render:()=>e.createElement(n,null)};var a,t,m;r.parameters={...r.parameters,docs:{...(a=r.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  render: () => <DisableGrammarComponent />
+}`,...(m=(t=r.parameters)==null?void 0:t.docs)==null?void 0:m.source}}};const f=["DisableGrammar"];export{r as DisableGrammar,f as __namedExportsOrder,G as default};
