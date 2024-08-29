@@ -16,7 +16,7 @@ const FocusTemplate: Story = {
     let $note: any = null;
     function doFocus() {
       if ($note) {
-        $note.summernote('Focus');
+        $note.summernote('focus');
       }
     }
 

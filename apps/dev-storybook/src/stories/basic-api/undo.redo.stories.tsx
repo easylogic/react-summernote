@@ -1,6 +1,5 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { ReactSummernoteLite } from '@easylogic/react-summernote-lite';
 
 const meta: Meta<typeof ReactSummernoteLite> = {
@@ -18,14 +17,12 @@ export const UndoAndRedo: Story = {
     const doUndo = () => {
       if ($note.current) {
         $note.current.summernote('undo');
-        action('undo')();
       }
     };
 
     const doRedo = () => {
       if ($note.current) {
         $note.current.summernote('redo');
-        action('redo')();
       }
     };
 
@@ -39,7 +36,6 @@ export const UndoAndRedo: Story = {
           {...args}
           onInit={({ note }) => {
             $note.current = note;
-            action('onInit')(note);
           }}
         />
       </div>

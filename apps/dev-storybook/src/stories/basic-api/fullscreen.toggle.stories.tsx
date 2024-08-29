@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import React from 'react';
-import { ReactSummernoteLite, SummernoteCallbackInitProps } from '@easylogic/react-summernote-lite';
+import {
+  ReactSummernoteLite,
+  SummernoteCallbackInitProps,
+  SummernoteJQueryInstance,
+} from '@easylogic/react-summernote-lite';
 
 const meta = {
   title: 'Basic API/FullScreenToggle',
@@ -11,7 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const FullScreenToggleComponent: React.FC = () => {
-  const noteRef = React.useRef<any>(null);
+  const noteRef = React.useRef<SummernoteJQueryInstance | null>(null);
 
   const doFullScreen = React.useCallback(() => {
     if (noteRef.current) {
