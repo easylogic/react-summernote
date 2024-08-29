@@ -91,7 +91,8 @@ export type SummernoteCommand =
   | 'formatH5'
   | 'formatH6'
   | 'isEmpty'
-  | string;
+  | 'fullscreen.toggle'
+  | (string & {});
 
 export interface SummernoteCommandCallback {
   (command: 'justify' | 'justifyLeft' | 'justifyCenter' | 'justifyRight' | 'justifyFull'): void;

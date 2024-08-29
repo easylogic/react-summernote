@@ -28,7 +28,8 @@ const CreateRangeComponent: React.FC = () => {
         <ReactSummernoteLite 
           id="sample" 
           onInit={({ note }) => {
-            nodeRef.current = note;
+            const range = note.summernote('createRange');
+            console.log(range);
           }} 
         />
       `}</pre>
