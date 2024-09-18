@@ -1,5 +1,14 @@
 # @easylogic/react-summernote-lite
 
+## 0.1.5
+
+### Patch Changes
+
+- [#55](https://github.com/easylogic/react-summernote/pull/55) [`3648e23`](https://github.com/easylogic/react-summernote/commit/3648e23ed085fd1396b0fe716c8eefd177839caf) Thanks [@github-actions](https://github.com/apps/github-actions)! - update next release version
+
+- Updated dependencies [[`3648e23`](https://github.com/easylogic/react-summernote/commit/3648e23ed085fd1396b0fe716c8eefd177839caf)]:
+  - @easylogic/react-summernote@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes
